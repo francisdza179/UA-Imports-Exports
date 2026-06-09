@@ -142,7 +142,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-xl);
-  padding: var(--space-xl) 0;
+  padding: var(--space-md) 0;
   flex-wrap: wrap;
 }
 

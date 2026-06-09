@@ -238,3 +238,33 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ── Subtle Hover Zoom for Content Images ─────── */
+.section img,
+.hero img,
+.footer img,
+.image-marquee img,
+.glass-parallax img,
+.pull-quote-banner img {
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.section img:hover,
+.hero img:hover,
+.footer img:hover,
+.image-marquee img:hover,
+.glass-parallax img:hover,
+.pull-quote-banner img:hover {
+  transform: scale(1.03);
+}
+
+/* Exclude non-content images from zoom */
+.navbar__logo-img:hover,
+.footer__logo-img:hover,
+.footer__certs-row-img:hover,
+.whatsapp-float svg:hover,
+.about__cue-circle img:hover,
+.about__badge img:hover,
+.hero__image:hover {
+  transform: none;
+}

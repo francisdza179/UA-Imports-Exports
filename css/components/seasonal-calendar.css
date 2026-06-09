@@ -1,0 +1,232 @@
+/* ============================================================
+   Component: Seasonal Availability Calendar
+   ============================================================ */
+
+.seasonal-calendar {
+  background: var(--color-white);
+  position: relative;
+}
+
+.seasonal-calendar__header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto var(--space-3xl);
+}
+
+/* ── Calendar Table ──────────────────────────── */
+.seasonal-calendar__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.seasonal-calendar__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+/* ── Header Row (Months) ─────────────────────── */
+.seasonal-calendar__month-row th {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  padding: var(--space-md) var(--space-xs);
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+  background: var(--color-cloud);
+}
+
+.seasonal-calendar__month-row th:first-child {
+  text-align: left;
+  padding-left: var(--space-lg);
+  min-width: 160px;
+}
+
+/* ── Product Label Column ────────────────────── */
+.seasonal-calendar__product-cell {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-charcoal);
+  padding: var(--space-lg) var(--space-lg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+}
+
+.seasonal-calendar__product-cell small {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  color: var(--color-slate);
+  display: block;
+  margin-top: 2px;
+}
+
+/* ── Availability Cells ──────────────────────── */
+.seasonal-calendar__cell {
+  text-align: center;
+  padding: var(--space-sm);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform var(--dur-fast) var(--ease-smooth);
+  position: relative;
+}
+
+.seasonal-calendar__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 32px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  transition: all var(--dur-fast) var(--ease-smooth);
+  cursor: default;
+}
+
+/* Peak Season */
+.seasonal-calendar__badge--peak {
+  background: var(--color-emerald);
+  color: var(--color-white);
+}
+
+/* Available */
+.seasonal-calendar__badge--available {
+  background: rgba(var(--color-sage-rgb), 0.12);
+  color: var(--color-forest);
+}
+
+/* Off-Season */
+.seasonal-calendar__badge--off {
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.25);
+}
+
+/* ── Hover Interactivity ─────────────────────── */
+.seasonal-calendar__row {
+  transition: background var(--dur-fast) var(--ease-smooth);
+  cursor: default;
+}
+
+.seasonal-calendar__row:hover {
+  background: rgba(var(--color-sage-rgb), 0.04);
+}
+
+.seasonal-calendar__row:hover .seasonal-calendar__badge--peak {
+  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-emerald);
+  transform: scale(1.05);
+}
+
+.seasonal-calendar__row:hover .seasonal-calendar__badge--available {
+  background: rgba(var(--color-sage-rgb), 0.2);
+  transform: scale(1.05);
+}
+
+.seasonal-calendar__row:hover .seasonal-calendar__badge--off {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* ── Tooltip on hover ────────────────────────── */
+.seasonal-calendar__badge {
+  position: relative;
+}
+
+.seasonal-calendar__badge::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-white);
+  background: var(--color-charcoal);
+  padding: 4px 10px;
+  border-radius: var(--border-radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--dur-fast) var(--ease-smooth);
+  z-index: var(--z-above);
+}
+
+.seasonal-calendar__badge:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Legend ───────────────────────────────────── */
+.seasonal-calendar__legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.seasonal-calendar__legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: var(--color-slate);
+}
+
+.seasonal-calendar__legend-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.seasonal-calendar__legend-swatch--peak {
+  background: var(--color-emerald);
+}
+
+.seasonal-calendar__legend-swatch--available {
+  background: rgba(var(--color-sage-rgb), 0.12);
+  border: 1px solid rgba(var(--color-sage-rgb), 0.2);
+}
+
+.seasonal-calendar__legend-swatch--off {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 768px) {
+  .seasonal-calendar__table-wrap {
+    margin: 0 calc(-1 * var(--container-pad));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .seasonal-calendar__product-cell {
+    padding: var(--space-md) var(--space-md);
+    font-size: var(--fs-xs);
+    min-width: 120px;
+  }
+
+  .seasonal-calendar__month-row th {
+    font-size: 0.6rem;
+    padding: var(--space-sm) var(--space-xs);
+  }
+
+  .seasonal-calendar__badge {
+    min-height: 26px;
+    font-size: 0.55rem;
+  }
+}
