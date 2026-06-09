@@ -1,0 +1,132 @@
+/* ============================================================
+   Component: Glass Parallax — Cinematic Glassmorphism Break
+   ============================================================ */
+
+.glass-parallax {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--space-3xl) 0;
+  border-top: 1px solid rgba(255, 206, 27, 0.2);
+  border-bottom: 1px solid rgba(255, 206, 27, 0.2);
+}
+
+/* Background image with parallax alignment */
+.glass-parallax__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.glass-parallax__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.4) contrast(1.1);
+  transform: scale(1.05);
+}
+
+/* Frosted glass premium container card */
+.glass-parallax__card {
+  position: relative;
+  z-index: 2;
+  background: rgba(26, 26, 26, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 206, 27, 0.25);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-2xl) var(--space-3xl);
+  max-width: 780px;
+  width: calc(100% - (var(--container-pad) * 2));
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(0, 0, 0, 0.3);
+  transition: transform var(--dur-normal) var(--ease-smooth);
+}
+
+.glass-parallax__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 206, 27, 0.4);
+}
+
+.glass-parallax__eyebrow {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  margin-bottom: var(--space-sm);
+}
+
+.glass-parallax__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-md);
+}
+
+.glass-parallax__title span {
+  color: var(--color-gold);
+}
+
+.glass-parallax__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.glass-parallax__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: var(--color-gold);
+  color: var(--color-charcoal);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--border-radius-pill);
+  transition: all var(--dur-fast) var(--ease-smooth);
+  text-decoration: none;
+}
+
+.glass-parallax__cta:hover {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 206, 27, 0.2);
+}
+
+.glass-parallax__cta-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--dur-fast);
+}
+
+.glass-parallax__cta:hover .glass-parallax__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .glass-parallax {
+    min-height: 420px;
+    padding: var(--space-xl) 0;
+  }
+
+  .glass-parallax__card {
+    padding: var(--space-xl) var(--space-lg);
+  }
+}

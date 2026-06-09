@@ -1,0 +1,67 @@
+.image-banner {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  border-radius: 0 !important;
+  background: #1a3a2a;
+  transform-style: preserve-3d;
+}
+
+/* Remove section padding — this is a full-bleed banner */
+#image-banner.section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.image-banner__bg {
+  position: absolute;
+  top: -35%;
+  left: 0;
+  width: 100%;
+  height: 170%;
+  object-fit: cover;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  border-radius: 0 !important;
+}
+
+.image-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.35), rgba(0,0,0,0.15));
+  z-index: 1;
+}
+
+.image-banner__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--space-xl);
+}
+
+.image-banner__heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .image-banner {
+    height: 450px;
+  }
+
+  .image-banner__heading {
+    font-size: var(--fs-2xl);
+  }
+}

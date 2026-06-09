@@ -1,0 +1,105 @@
+.logo-marquee {
+  background: var(--color-white);
+  padding: var(--space-3xl) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-marquee__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+
+.logo-marquee__container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: var(--space-lg) auto 0;
+  /* Mask image for fade effect on both sides */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.logo-marquee__track {
+  display: flex;
+  width: max-content;
+  /* Animate by 25% since we will have 4 identical content blocks */
+  animation: marquee-scroll 25s linear infinite;
+}
+
+/* Pause on hover */
+.logo-marquee__track:hover {
+  animation-play-state: paused;
+}
+
+.logo-marquee__content {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  padding-right: 6rem; /* Spacing between blocks */
+}
+
+.logo-marquee__logo {
+  height: 60px; /* Adjust based on logo proportions */
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  /* Make them uniform, gray but inky by default */
+  filter: grayscale(100%) contrast(1.2);
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+  transition: filter var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth);
+  cursor: pointer;
+}
+
+.logo-marquee__logo:hover {
+  filter: grayscale(0%) contrast(1);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.logo-marquee__text {
+  font-size: var(--fs-sm);
+  color: var(--color-slate);
+  text-align: center;
+  line-height: var(--lh-relaxed);
+  max-width: 600px;
+  margin: var(--space-lg) auto 0;
+  padding: 0 var(--container-pad);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .logo-marquee {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .logo-marquee__logo {
+    height: 45px;
+    max-width: 120px;
+  }
+  
+  .logo-marquee__content {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+  
+  .logo-marquee__container {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}

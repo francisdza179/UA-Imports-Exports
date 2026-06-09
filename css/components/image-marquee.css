@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Image Marquee Section (Continuous Gallery)
+   ========================================================================== */
+
+.image-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 4rem 0;
+  background-color: var(--color-surface, #ffffff);
+  position: relative;
+  /* Add subtle top/bottom borders or shadows if needed */
+}
+
+.image-marquee__track {
+  display: flex;
+  width: max-content;
+  /* Adjust time based on desired speed. 120s is a good starting point for 20 images */
+  animation: image-marquee-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover */
+.image-marquee:hover .image-marquee__track {
+  animation-play-state: paused;
+}
+
+.image-marquee__content {
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 1.5rem; /* Must equal gap to prevent jumping during the loop */
+}
+
+.image-marquee__item {
+  width: 350px;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  cursor: grab;
+}
+
+.image-marquee__item:active {
+  cursor: grabbing;
+}
+
+.image-marquee__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.image-marquee__item:hover img {
+  transform: scale(1.1);
+}
+
+/* Optional Overlay on hover */
+.image-marquee__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.image-marquee__item:hover::after {
+  opacity: 1;
+}
+
+/* Animation Keyframes */
+@keyframes image-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Translates by exactly 50% of the track (which is the width of one content block) */
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+  .image-marquee {
+    padding: 2.5rem 0;
+  }
+  
+  .image-marquee__item {
+    width: 260px;
+    height: 190px;
+    border-radius: 12px;
+  }
+  
+  .image-marquee__content {
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+}

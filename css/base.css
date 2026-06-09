@@ -1,0 +1,240 @@
+/* ============================================================
+   UA IMPORTS & EXPORTS — Base Styles
+   ============================================================ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--color-charcoal);
+  background-color: var(--color-cloud);
+}
+
+/* ── Headings ────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  color: var(--color-charcoal);
+}
+
+h1 { font-size: var(--fs-hero); }
+h2 { font-size: var(--fs-3xl); }
+h3 { font-size: var(--fs-2xl); }
+h4 { font-size: var(--fs-xl); }
+h5 { font-size: var(--fs-lg); }
+h6 { font-size: var(--fs-md); }
+
+/* ── Paragraphs ──────────────────────────────────────────────── */
+p {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--color-slate);
+}
+
+p + p {
+  margin-top: var(--space-md);
+}
+
+/* ── Links ───────────────────────────────────────────────────── */
+a {
+  transition: color var(--dur-fast) var(--ease-smooth);
+}
+
+a:hover {
+  color: var(--color-sage);
+}
+
+/* ── Eyebrow / Label Text ────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Section Heading ─────────────────────────────────────────── */
+.section-heading {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-lg);
+}
+
+.section-heading .highlight {
+  color: var(--color-sage);
+}
+
+.section-heading .highlight-gold {
+  color: var(--color-gold);
+}
+
+.section-heading .highlight-emerald {
+  color: var(--color-emerald);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  padding: 0.9rem 2rem;
+  border-radius: var(--border-radius-pill);
+  transition: all var(--dur-fast) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left var(--dur-slow) var(--ease-smooth);
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  color: var(--color-charcoal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-gold);
+  border: 2px solid var(--color-gold);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.btn-white {
+  background-color: var(--color-white);
+  color: var(--color-forest);
+  border: 2px solid var(--color-white);
+}
+
+.btn-white:hover {
+  background-color: transparent;
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn.btn--primary {
+  background-color: var(--color-gold);
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-gold);
+}
+
+.btn.btn--primary:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  color: var(--color-charcoal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.btn.btn--outline {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn.btn--outline:hover {
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn .btn-arrow {
+  transition: transform var(--dur-fast) var(--ease-smooth);
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Utility Classes ─────────────────────────────────────────── */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+.text-white  { color: var(--color-white); }
+.text-gold   { color: var(--color-gold); }
+.text-sage   { color: var(--color-sage); }
+.text-mint   { color: var(--color-mint); }
+.text-slate  { color: var(--color-slate); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.gold-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--color-gold);
+  border: none;
+  margin: var(--space-lg) 0;
+}
+
+.gold-rule--center {
+  margin-left: auto;
+  margin-right: auto;
+}

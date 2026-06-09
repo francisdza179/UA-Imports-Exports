@@ -1,0 +1,199 @@
+/* ============================================================
+   Storytelling Section — Our Roots / Our Impact at the Source
+   ============================================================ */
+.storytelling {
+  padding: var(--space-3xl) 0;
+  background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.storytelling .container {
+  max-width: 100%;
+}
+
+.storytelling__header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.storytelling__heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-charcoal);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-md);
+}
+
+.storytelling__subtitle {
+  font-size: var(--fs-md);
+  color: var(--color-slate);
+  line-height: var(--lh-relaxed);
+  margin-top: var(--space-md);
+}
+
+.storytelling__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.storytelling__card {
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-normal) var(--ease-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.storytelling__card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-color: rgba(var(--color-gold-rgb), 0.2);
+}
+
+.storytelling__image-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 125%;
+  overflow: hidden;
+  background: var(--color-cloud);
+}
+
+.storytelling__image-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.1) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.storytelling__image-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-smooth), filter var(--dur-slow) var(--ease-smooth);
+}
+
+.storytelling__card:hover .storytelling__image-wrap img {
+  transform: scale(1.08);
+}
+
+.storytelling__content {
+  padding: var(--space-xl) var(--space-xl) var(--space-2xl);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.storytelling__card-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-xs);
+  line-height: var(--lh-snug);
+  transition: color var(--dur-fast) var(--ease-smooth);
+}
+
+.storytelling__card:hover .storytelling__card-title {
+  color: var(--color-forest);
+}
+
+.storytelling__card-desc {
+  font-size: var(--fs-sm);
+  color: var(--color-slate);
+  line-height: var(--lh-relaxed);
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 1024px) {
+  .storytelling__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .storytelling__heading {
+    font-size: var(--fs-2xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .storytelling__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .storytelling {
+    padding: var(--space-2xl) 0;
+  }
+}
+
+/* ── Carousel ──────────────────────────────────── */
+.storytelling__carousel {
+  position: relative;
+  width: 100%;
+}
+
+.storytelling__slides-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.storytelling__slides {
+  display: flex;
+  transition: transform 0.6s var(--ease-smooth);
+  will-change: transform;
+}
+
+.storytelling__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  /* Fix layout inside flex container */
+  min-width: 100%;
+}
+
+.storytelling__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+}
+
+.storytelling__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-cloud);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--dur-fast) var(--ease-smooth);
+}
+
+.storytelling__dot:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.storytelling__dot.active {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  transform: scale(1.3);
+}

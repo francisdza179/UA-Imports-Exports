@@ -1,0 +1,52 @@
+/* ============================================================
+   Component: Contact CTA
+   ============================================================ */
+
+.contact-cta {
+  background: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta__content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-cta__heading {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-md);
+}
+
+.contact-cta__description {
+  font-size: var(--fs-lg);
+  color: var(--color-slate);
+  margin-bottom: var(--space-2xl);
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-cta__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 480px) {
+  .contact-cta__buttons {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .contact-cta__buttons .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}

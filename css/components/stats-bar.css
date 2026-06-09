@@ -1,0 +1,110 @@
+/* ============================================================
+   Component: Stats Bar — Floating Overlapping Metrics
+   ============================================================ */
+
+.stats-bar {
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  margin-top: -80px;
+  margin-bottom: var(--space-2xl);
+  padding: 0;
+}
+
+.stats-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.stats-bar__item {
+  text-align: center;
+  position: relative;
+  padding: var(--space-xl) var(--space-lg);
+  background: transparent;
+  transition: background-color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth);
+}
+
+.stats-bar__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.stats-bar__item:hover {
+  background-color: rgba(38, 140, 67, 0.025); /* Subtle brand green tint */
+}
+
+.stats-bar__number {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-forest);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  transition: transform var(--dur-fast) var(--ease-smooth);
+}
+
+.stats-bar__item:hover .stats-bar__number {
+  transform: translateY(-2px) scale(1.04);
+}
+
+.stats-bar__number span {
+  display: inline-block;
+}
+
+.stats-bar__number .stats-suffix {
+  font-size: 0.6em;
+  color: var(--color-gold);
+}
+
+.stats-bar__label {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-slate);
+  line-height: var(--lh-normal);
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 968px) {
+  .stats-bar {
+    margin-top: -60px;
+    padding: 0 var(--space-md);
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: var(--border-radius-md);
+  }
+
+  .stats-bar__item {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-bar {
+    margin-top: -40px;
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-bar__item {
+    padding: var(--space-md) var(--space-md);
+  }
+}

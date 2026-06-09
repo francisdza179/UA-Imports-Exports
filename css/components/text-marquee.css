@@ -1,0 +1,72 @@
+/* ============================================================
+   Component: Text Marquee — Continuous Scrolling Brand Pillars
+   ============================================================ */
+
+.text-marquee {
+  background: linear-gradient(90deg, #1A1A1A 0%, #164E24 50%, #1A1A1A 100%);
+  padding: var(--space-md) 0;
+  border-top: 1.5px solid var(--color-gold);
+  border-bottom: 1.5px solid var(--color-gold);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+}
+
+.text-marquee__track {
+  display: flex;
+  white-space: nowrap;
+  animation: text-marquee-scroll 35s linear infinite;
+}
+
+/* Pause animation on hover for interactive feel */
+.text-marquee:hover .text-marquee__track {
+  animation-play-state: paused;
+}
+
+.text-marquee__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  padding-right: var(--space-xl);
+}
+
+.text-marquee__item {
+  font-family: var(--font-heading);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.text-marquee__item span {
+  color: var(--color-gold);
+}
+
+/* Small elegant gold sprout dot between pillars */
+.text-marquee__separator {
+  color: var(--color-gold);
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+}
+
+@keyframes text-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .text-marquee__track {
+    animation-duration: 90s; /* Much slower or static if preferred */
+  }
+}

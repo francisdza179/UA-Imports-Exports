@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Produce Marquee — Edge-to-Edge Floating Gallery
+   ========================================================================== */
+
+.produce-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0 3rem;
+  background-color: var(--color-cloud);
+  position: relative;
+}
+
+.produce-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: produceMarquee 60s linear infinite;
+}
+
+.produce-marquee__group {
+  display: flex;
+  align-items: flex-end;
+  gap: 8rem;
+  padding-right: 8rem;
+}
+
+.produce-marquee__group img {
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.produce-marquee__group img[data-size="xxl"] { height: 220px; }
+.produce-marquee__group img[data-size="xl"] { height: 145px; }
+.produce-marquee__group img[data-size="lg"] { height: 125px; }
+.produce-marquee__group img[data-size="md"] { height: 110px; }
+.produce-marquee__group img[data-size="sm"] { height: 90px; }
+.produce-marquee__group img[data-size="xs"] { height: 75px; }
+
+.produce-marquee__group img:hover {
+  transform: scale(1.15) translateY(-4px);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes produceMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .produce-marquee {
+    padding: 2rem 0;
+  }
+
+  .produce-marquee__group {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+
+  .produce-marquee__item { width: 70px; }
+
+  .produce-marquee__group { gap: 5rem; padding-right: 5rem; }
+  .produce-marquee__group img[data-size="xxl"] { height: 140px; }
+  .produce-marquee__group img[data-size="xl"] { height: 95px; }
+  .produce-marquee__group img[data-size="lg"] { height: 85px; }
+  .produce-marquee__group img[data-size="md"] { height: 75px; }
+  .produce-marquee__group img[data-size="sm"] { height: 60px; }
+  .produce-marquee__group img[data-size="xs"] { height: 50px; }
+}

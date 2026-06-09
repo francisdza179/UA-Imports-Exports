@@ -1,0 +1,93 @@
+/* ============================================================
+   Component: Pull-Quote Banner — Cinematic visual break
+   ============================================================ */
+
+.pull-quote-banner {
+  background: var(--color-charcoal);
+  padding: var(--space-3xl) 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-top: 1px solid rgba(255, 206, 27, 0.15);
+  border-bottom: 1px solid rgba(255, 206, 27, 0.15);
+}
+
+/* Subtle background glowing gradient */
+.pull-quote-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(var(--color-gold-rgb), 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pull-quote-banner__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.pull-quote-banner__eyebrow {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-widest);
+  margin-bottom: var(--space-md);
+}
+
+.pull-quote-banner__quote {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: var(--space-md);
+}
+
+.pull-quote-banner__quote span {
+  background: linear-gradient(135deg, var(--color-gold) 0%, #FFE57F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pull-quote-banner__accent-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.pull-quote-banner__line {
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.pull-quote-banner__sprout {
+  color: var(--color-gold);
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+/* Scroll reveal motion support */
+.pull-quote-banner[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--dur-slow) var(--ease-smooth), transform var(--dur-slow) var(--ease-smooth);
+}
+
+.pull-quote-banner.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,234 @@
+/* ============================================================
+   UA IMPORTS & EXPORTS — Animations
+   ============================================================ */
+
+/* ── Keyframes ───────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideReveal {
+  from {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(var(--color-gold-rgb), 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(var(--color-gold-rgb), 0.15);
+  }
+}
+
+@keyframes bounceChevron {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(10px); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.08); }
+}
+
+@keyframes widthGrow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ── Scroll Reveal System ────────────────────────────────────── */
+/* Elements with [data-reveal] start hidden and animate in when
+   the IntersectionObserver adds .is-revealed */
+
+[data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: transform, opacity;
+  transition-duration: 800ms; /* Premium slower slide */
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* Custom high-end ease-out-expo curve */
+}
+
+[data-reveal="fade-up"] {
+  transform: translateY(30px); /* Slightly tighter displacement for elegant movement */
+}
+
+[data-reveal="fade-down"] {
+  transform: translateY(-30px);
+}
+
+[data-reveal="fade-left"] {
+  transform: translateX(-40px);
+}
+
+[data-reveal="fade-right"] {
+  transform: translateX(40px);
+}
+
+[data-reveal="carousel-right"] {
+  transform: translateX(250px);
+}
+
+[data-reveal="scale-in"] {
+  transform: scale(0.88);
+}
+
+[data-reveal="flip-in"] {
+  transform: perspective(1000px) rotateX(-80deg) translateY(30px);
+  transform-origin: top center;
+  opacity: 0;
+}
+
+[data-reveal="fade"] {
+  transform: none;
+}
+
+/* Revealed state */
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+[data-reveal="flip-in"].is-revealed {
+  transform: perspective(1000px) rotateX(0deg) translateY(0);
+  opacity: 1;
+}
+
+/* Stagger delays */
+[data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal-delay="3"] { transition-delay: 0.3s; }
+[data-reveal-delay="4"] { transition-delay: 0.4s; }
+[data-reveal-delay="5"] { transition-delay: 0.5s; }
+[data-reveal-delay="6"] { transition-delay: 0.6s; }
+[data-reveal-delay="7"] { transition-delay: 0.7s; }
+[data-reveal-delay="8"] { transition-delay: 0.8s; }
+
+/* Duration variants */
+[data-reveal-duration="fast"]      { transition-duration: var(--dur-fast); }
+[data-reveal-duration="slow"]      { transition-duration: var(--dur-slow); }
+[data-reveal-duration="cinematic"] { transition-duration: var(--dur-cinematic); }
+
+/* ── Utility Animation Classes ───────────────────────────────── */
+.anim-float {
+  animation: float 4s var(--ease-in-out) infinite;
+}
+
+.anim-float-slow {
+  animation: floatSlow 6s var(--ease-in-out) infinite;
+}
+
+.anim-pulse-glow {
+  animation: pulseGlow 3s var(--ease-in-out) infinite;
+}
+
+.anim-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* ── Reduced Motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

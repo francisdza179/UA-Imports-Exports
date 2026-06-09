@@ -1,0 +1,254 @@
+/* ============================================================
+   Component: Global Reach Map
+   ============================================================ */
+
+.global-reach {
+  background-color: var(--color-white);
+  padding: var(--space-section) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle background texture */
+.global-reach::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(var(--color-sage-rgb), 0.015) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(var(--color-sage-rgb), 0.015) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ── Layout ──────────────────────────────────── */
+
+.global-reach__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4xl);
+  align-items: center;
+}
+
+/* ── Map Wrapper ─────────────────────────────── */
+
+.global-reach__map-wrapper {
+  position: relative;
+}
+
+/* decorative corner brackets */
+.global-reach__map-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(var(--color-sage-rgb), 0.15);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.global-reach__map-corner--tl {
+  top: -6px;
+  left: -6px;
+  border-width: 1px 0 0 1px;
+}
+
+.global-reach__map-corner--br {
+  bottom: -6px;
+  right: -6px;
+  border-width: 0 1px 1px 0;
+}
+
+.global-reach__map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Map Animations ──────────────────────────── */
+
+@keyframes reachDraw {
+  0%   { stroke-dashoffset: 200; opacity: 0; }
+  40%  { opacity: 0.5; }
+  100% { stroke-dashoffset: 0; opacity: inherit; }
+}
+
+@keyframes reachFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reachOriginPulse {
+  0%, 100% { r: 5; opacity: 0.25; }
+  50%      { r: 8; opacity: 0.1; }
+}
+
+.global-reach__landmass {
+  animation: reachFadeIn 1.2s var(--ease-out-expo) forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.global-reach__graticule {
+  animation: reachFadeIn 1s var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.global-reach__origin circle:first-child {
+  animation: reachOriginPulse 2.5s ease-in-out infinite;
+}
+
+.global-reach__origin circle:last-child {
+  animation: reachFadeIn 0.8s var(--ease-out-expo) forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+.global-reach__curve {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: reachDraw 1.5s var(--ease-out-expo) forwards;
+}
+
+.global-reach__dot {
+  animation: reachFadeIn 0.6s var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.global-reach__dot--active {
+  filter: drop-shadow(0 0 4px rgba(var(--color-emerald-rgb), 0.5));
+}
+
+.global-reach__dot--emerging {
+  filter: drop-shadow(0 0 3px rgba(var(--color-gold-rgb), 0.4));
+}
+
+.global-reach__labels {
+  animation: reachFadeIn 0.8s var(--ease-out-expo) forwards;
+  opacity: 0;
+  animation-delay: 2.5s;
+}
+
+/* ── Content Side ────────────────────────────── */
+
+.global-reach__content {
+  max-width: 480px;
+}
+
+.global-reach__heading {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-snug);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-lg);
+}
+
+.global-reach__subtitle {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--color-slate);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Markets List ────────────────────────────── */
+
+.global-reach__markets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md) var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.global-reach__markets-heading {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-emerald);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+  margin-bottom: var(--space-sm);
+}
+
+.global-reach__markets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.global-reach__markets-item {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--color-charcoal);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.global-reach__markets-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  opacity: 0.35;
+}
+
+/* ── Legend ───────────────────────────────────── */
+
+.global-reach__legend {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.global-reach__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-slate);
+}
+
+.global-reach__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .global-reach__layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .global-reach__content {
+    max-width: 100%;
+  }
+
+  .global-reach__map-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .global-reach__markets {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .global-reach__legend {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .global-reach__map-corner {
+    display: none;
+  }
+}

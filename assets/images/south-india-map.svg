@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8faf6"/>
+      <stop offset="100%" stop-color="#edf3e9"/>
+    </linearGradient>
+    <linearGradient id="landGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d6a4f"/>
+      <stop offset="50%" stop-color="#1b4332"/>
+      <stop offset="100%" stop-color="#0d2818"/>
+    </linearGradient>
+    <linearGradient id="stateFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#40916c"/>
+      <stop offset="100%" stop-color="#2d6a4f"/>
+    </linearGradient>
+    <linearGradient id="stateFill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#52b788"/>
+      <stop offset="100%" stop-color="#40916c"/>
+    </linearGradient>
+    <linearGradient id="stateFill3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b4332"/>
+      <stop offset="100%" stop-color="#0d2818"/>
+    </linearGradient>
+    <linearGradient id="oceanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4e9f7"/>
+      <stop offset="100%" stop-color="#b8d4e8"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="700" rx="20" fill="url(#bgGrad)"/>
+
+  <!-- Subtle dot pattern -->
+  <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="0.8" fill="#2d6a4f" opacity="0.04"/>
+  </pattern>
+  <rect width="600" height="700" rx="20" fill="url(#dots)"/>
+
+  <!-- Ocean area -->
+  <path d="M60 440 Q100 460 140 500 Q180 560 200 620 Q220 660 250 680 L80 680 Z" fill="url(#oceanGrad)" opacity="0.3"/>
+  <path d="M480 480 Q520 500 540 540 Q560 580 550 630 Q540 670 500 680 L600 680 L600 480 Z" fill="url(#oceanGrad)" opacity="0.25"/>
+
+  <!-- === STATES === -->
+
+  <!-- Goa (small, west coast, above Karnataka) -->
+  <path d="M195 130 Q210 125 225 135 Q230 150 220 165 Q205 170 190 160 Q185 145 195 130Z"
+        fill="url(#stateFill2)" stroke="#1b4332" stroke-width="1.2" opacity="0.9"/>
+
+  <!-- Telangana (north central) -->
+  <path d="M260 105 Q300 95 340 100 Q370 110 390 130 Q395 155 385 175 Q370 190 340 195 Q310 198 280 190 Q260 180 250 165 Q245 140 260 105Z"
+        fill="url(#stateFill2)" stroke="#1b4332" stroke-width="1.2" opacity="0.85"/>
+
+  <!-- Karnataka (west central, below Goa, above Kerala) -->
+  <path d="M195 165 Q220 175 250 185 Q280 195 305 210 Q315 230 310 260 Q305 280 290 300 Q270 315 245 320 Q220 318 200 310 Q180 295 170 270 Q165 240 175 210 Q180 185 195 165Z"
+        fill="url(#stateFill)" stroke="#1b4332" stroke-width="1.2" opacity="0.85"/>
+
+  <!-- Andhra Pradesh (east coast, above Tamil Nadu) -->
+  <path d="M340 195 Q365 200 385 215 Q395 240 390 265 Q385 290 370 310 Q355 325 335 330 Q310 335 290 325 Q275 310 270 290 Q268 265 275 240 Q285 215 310 200 Q325 195 340 195Z"
+        fill="url(#stateFill)" stroke="#1b4332" stroke-width="1.2" opacity="0.85"/>
+
+  <!-- Kerala (southwest coast, long narrow strip) -->
+  <path d="M200 315 Q225 325 240 350 Q250 380 248 410 Q245 440 235 465 Q225 485 210 500 Q195 510 178 508 Q160 500 152 485 Q148 460 150 435 Q153 405 160 375 Q170 345 185 325 Q192 318 200 315Z"
+        fill="url(#stateFill2)" stroke="#1b4332" stroke-width="1.2" opacity="0.85"/>
+
+  <!-- Tamil Nadu (southeast including the tip) -->
+  <path d="M290 325 Q315 335 335 350 Q350 370 358 395 Q362 420 355 445 Q345 470 330 490 Q310 508 290 515 Q270 520 250 515 Q230 505 215 490 Q202 475 205 450 Q210 425 218 400 Q228 370 245 345 Q260 330 290 325Z"
+        fill="url(#stateFill)" stroke="#1b4332" stroke-width="1.2" opacity="0.85"/>
+
+  <!-- === KANYAKUMARI TIP (southernmost point) === -->
+  <path d="M270 520 Q280 530 285 545 Q288 560 283 575 Q278 588 268 595 Q258 600 248 595 Q238 585 235 570 Q233 555 238 540 Q245 525 258 518 Q264 516 270 520Z"
+        fill="#0d2818" stroke="#1b4332" stroke-width="1.2" opacity="0.85"/>
+
+  <!-- === MAP OUTLINE (whole region) === -->
+  <path d="M195 130 Q220 115 260 100 Q300 90 340 95 Q375 105 395 130
+           Q405 155 395 180 Q410 200 420 230 Q425 260 415 290
+           Q405 320 390 345 Q380 370 368 395 Q360 420 352 445
+           Q345 470 335 492 Q322 512 305 528 Q290 540 278 555
+           Q268 572 265 590 Q260 608 252 620
+           Q242 608 235 590 Q228 572 220 555
+           Q208 540 195 528 Q180 515 168 498
+           Q155 478 148 455 Q142 430 145 405
+           Q148 378 155 350 Q162 322 175 298
+           Q185 275 185 250 Q182 225 178 200
+           Q172 178 168 158 Q170 140 185 132Z"
+        fill="none" stroke="#0d2818" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- === DOTS: KEY SOURCING CITIES === -->
+
+  <!-- Coimbatore (Tamil Nadu) -->
+  <circle cx="275" cy="410" r="5" fill="#d4af37" filter="url(#glow)"/>
+  <circle cx="275" cy="410" r="2.5" fill="#fff"/>
+  <text x="250" y="405" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#1b4332" opacity="0.8">Coimbatore</text>
+
+  <!-- Kochi (Kerala) -->
+  <circle cx="195" cy="425" r="5" fill="#d4af37" filter="url(#glow)"/>
+  <circle cx="195" cy="425" r="2.5" fill="#fff"/>
+  <text x="155" y="420" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#1b4332" opacity="0.8">Kochi</text>
+
+  <!-- Chennai (Tamil Nadu) -->
+  <circle cx="360" cy="340" r="5" fill="#d4af37" filter="url(#glow)"/>
+  <circle cx="360" cy="340" r="2.5" fill="#fff"/>
+  <text x="355" y="330" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#1b4332" opacity="0.8">Chennai</text>
+
+  <!-- Bengaluru (Karnataka) -->
+  <circle cx="260" cy="260" r="5" fill="#d4af37" filter="url(#glow)"/>
+  <circle cx="260" cy="260" r="2.5" fill="#fff"/>
+  <text x="235" y="250" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#1b4332" opacity="0.8">Bengaluru</text>
+
+  <!-- Hyderabad (Telangana) -->
+  <circle cx="310" cy="155" r="5" fill="#d4af37" filter="url(#glow)"/>
+  <circle cx="310" cy="155" r="2.5" fill="#fff"/>
+  <text x="295" y="145" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#1b4332" opacity="0.8">Hyderabad</text>
+
+  <!-- Tuticorin (Tamil Nadu, port) -->
+  <circle cx="270" cy="480" r="4" fill="#d4af37" filter="url(#glow)" opacity="0.7"/>
+  <circle cx="270" cy="480" r="2" fill="#fff" opacity="0.7"/>
+  <text x="235" y="495" font-family="Inter, sans-serif" font-size="8" font-weight="500" fill="#1b4332" opacity="0.6">Tuticorin</text>
+
+  <!-- Mangaluru (Karnataka, port) -->
+  <circle cx="205" cy="240" r="4" fill="#d4af37" filter="url(#glow)" opacity="0.7"/>
+  <circle cx="205" cy="240" r="2" fill="#fff" opacity="0.7"/>
+  <text x="175" y="235" font-family="Inter, sans-serif" font-size="8" font-weight="500" fill="#1b4332" opacity="0.6">Mangaluru</text>
+
+  <!-- === ARABIAN SEA & BAY OF BENGAL LABELS === -->
+  <text x="55" y="580" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6b8e7d" opacity="0.4"
+        transform="rotate(-60, 55, 580)">Arabian Sea</text>
+  <text x="470" y="580" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6b8e7d" opacity="0.4"
+        transform="rotate(50, 470, 580)">Bay of Bengal</text>
+
+  <!-- === COMPASS ROSE === -->
+  <g transform="translate(60, 75)" opacity="0.3">
+    <circle cx="0" cy="0" r="18" stroke="#2d6a4f" stroke-width="0.8" fill="none"/>
+    <path d="M0 -22 L3 -6 L0 -8 L-3 -6 Z" fill="#2d6a4f"/>
+    <path d="M0 22 L3 6 L0 8 L-3 6 Z" fill="#2d6a4f" opacity="0.4"/>
+    <path d="M-22 0 L-6 3 L-8 0 L-6 -3 Z" fill="#2d6a4f" opacity="0.4"/>
+    <path d="M22 0 L6 3 L8 0 L6 -3 Z" fill="#2d6a4f" opacity="0.4"/>
+    <text x="-2" y="-26" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#2d6a4f">N</text>
+  </g>
+
+  <!-- === TITLE === -->
+  <text x="300" y="665" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#2d6a4f" opacity="0.5">South India</text>
+</svg>

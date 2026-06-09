@@ -1,0 +1,87 @@
+/* ============================================================
+   Component: Botanical Divider — Elegant Minimalist Visual Break
+   ============================================================ */
+
+.botanical-divider {
+  background: linear-gradient(180deg, var(--color-cloud) 0%, var(--color-white) 100%);
+  padding: var(--space-xl) 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.botanical-divider__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--container-pad);
+  gap: var(--space-xl);
+}
+
+.botanical-divider__line {
+  flex: 1;
+  height: 1.5px;
+  border: none;
+  margin: 0;
+}
+
+.botanical-divider__line--left {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 206, 27, 0.45) 80%, var(--color-gold) 100%);
+}
+
+.botanical-divider__line--right {
+  background: linear-gradient(90deg, var(--color-gold) 0%, rgba(255, 206, 27, 0.45) 20%, transparent 100%);
+}
+
+/* Elegant gold sprout leaf badge */
+.botanical-divider__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 206, 27, 0.4);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm), 0 0 15px rgba(255, 206, 27, 0.08);
+  color: var(--color-gold);
+  transition: all var(--dur-normal) var(--ease-bounce);
+  cursor: pointer;
+  position: relative;
+}
+
+.botanical-divider__badge svg {
+  width: 22px;
+  height: 22px;
+  transition: transform var(--dur-normal) var(--ease-bounce);
+}
+
+/* Elegant glow effect on badge hover */
+.botanical-divider__badge::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 206, 27, 0.25);
+  opacity: 0.8;
+  animation: divider-spin 20s linear infinite;
+}
+
+.botanical-divider__badge:hover {
+  transform: scale(1.1) rotate(5deg);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-md), 0 0 25px rgba(255, 206, 27, 0.2);
+}
+
+.botanical-divider__badge:hover svg {
+  transform: scale(1.1);
+}
+
+@keyframes divider-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

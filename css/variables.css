@@ -1,0 +1,107 @@
+/* ============================================================
+   UA IMPORTS & EXPORTS — Design Tokens
+   ============================================================ */
+
+:root {
+  /* ── Color Palette ─────────────────────────────────────────── */
+  --color-forest:       #268C43;
+  --color-forest-rgb:   38, 140, 67;
+  --color-emerald:      #268C43;
+  --color-emerald-rgb:  38, 140, 67;
+  --color-sage:         #268C43;
+  --color-sage-rgb:     38, 140, 67;
+  --color-mint:         #268C43;
+  --color-mint-rgb:     38, 140, 67;
+  --color-cream:        #FEFAE0;
+  --color-cream-rgb:    254, 250, 224;
+  --color-gold:         #FFCE1B;
+  --color-gold-rgb:     255, 206, 27;
+  --color-gold-light:   #FFCE1B;
+  --color-gold-light-rgb: 255, 206, 27;
+  --color-charcoal:     #1A1A1A;
+  --color-charcoal-rgb: 26, 26, 26;
+  --color-slate:        #4A4A4A;
+  --color-slate-rgb:    74, 74, 74;
+  --color-cloud:        #F8F9FA;
+  --color-cloud-rgb:    248, 249, 250;
+  --color-white:        #FFFFFF;
+  --color-white-rgb:    255, 255, 255;
+
+  /* ── Typography ────────────────────────────────────────────── */
+  --font-heading:  'Instrument Sans', 'Inter', system-ui, sans-serif;
+  --font-body:     'Inter', 'Instrument Sans', system-ui, sans-serif;
+
+  --fw-regular:    400;
+  --fw-medium:     500;
+  --fw-semibold:   600;
+  --fw-bold:       700;
+  --fw-extrabold:  800;
+
+  --fs-xs:         clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --fs-sm:         clamp(0.8rem, 0.75rem + 0.3vw, 0.9rem);
+  --fs-base:       clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
+  --fs-md:         clamp(1.05rem, 1rem + 0.35vw, 1.2rem);
+  --fs-lg:         clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --fs-xl:         clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  --fs-2xl:        clamp(1.8rem, 1.5rem + 1.2vw, 2.5rem);
+  --fs-3xl:        clamp(2.2rem, 1.8rem + 1.8vw, 3.2rem);
+  --fs-4xl:        clamp(2.8rem, 2.2rem + 2.5vw, 4.2rem);
+  --fs-hero:       clamp(3rem, 2.5rem + 3vw, 5rem);
+
+  --lh-tight:      1.1;
+  --lh-snug:       1.25;
+  --lh-normal:     1.55;
+  --lh-relaxed:    1.75;
+
+  --ls-tight:      -0.02em;
+  --ls-normal:     0;
+  --ls-wide:       0.05em;
+  --ls-wider:      0.1em;
+  --ls-widest:     0.18em;
+
+  /* ── Spacing ───────────────────────────────────────────────── */
+  --space-xs:      0.25rem;
+  --space-sm:      0.5rem;
+  --space-md:      1rem;
+  --space-lg:      1.5rem;
+  --space-xl:      2rem;
+  --space-2xl:     3rem;
+  --space-3xl:     4rem;
+  --space-4xl:     6rem;
+  --space-5xl:     8rem;
+  --space-section: clamp(5rem, 8vw, 9rem);
+
+  /* ── Layout ────────────────────────────────────────────────── */
+  --container-max:  1320px;
+  --container-pad:  clamp(1.25rem, 4vw, 2.5rem);
+  --border-radius-sm:  6px;
+  --border-radius-md:  12px;
+  --border-radius-lg:  20px;
+  --border-radius-xl:  30px;
+  --border-radius-pill: 100px;
+
+  /* ── Shadows ───────────────────────────────────────────────── */
+  --shadow-sm:     0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md:     0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg:     0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-xl:     0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-glow-gold: 0 0 30px rgba(255, 206, 27, 0.25);
+
+  /* ── Animation ─────────────────────────────────────────────── */
+  --ease-smooth:     cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-bounce:     cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+
+  --dur-fast:        300ms;
+  --dur-normal:      600ms;
+  --dur-slow:        1000ms;
+  --dur-cinematic:   1800ms;
+
+  /* ── Z-Index Scale ─────────────────────────────────────────── */
+  --z-base:       1;
+  --z-above:      10;
+  --z-overlay:    100;
+  --z-nav:        1000;
+  --z-modal:      2000;
+}

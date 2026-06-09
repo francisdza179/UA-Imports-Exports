@@ -1,0 +1,96 @@
+/* ============================================================
+   Component: Ticker Strip — Compact Horizontal Metrics Break
+   ============================================================ */
+
+.ticker-strip {
+  background: linear-gradient(135deg, #164E24 0%, #1A1A1A 100%);
+  padding: var(--space-xl) 0;
+  border-top: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gold shimmer texture */
+.ticker-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 50%, rgba(var(--color-gold-rgb), 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.ticker-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  z-index: 2;
+  align-items: center;
+}
+
+.ticker-strip__item {
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+  position: relative;
+}
+
+/* Thin vertical gold separators */
+.ticker-strip__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: 0;
+  width: 1px;
+  height: 70%;
+  background: linear-gradient(180deg, transparent, rgba(255, 206, 27, 0.3), transparent);
+}
+
+.ticker-strip__number {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-gold);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticker-strip__label {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  opacity: 0.9;
+}
+
+/* Responsive grid layout */
+@media (max-width: 768px) {
+  .ticker-strip__grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--space-lg);
+  }
+
+  .ticker-strip__item:nth-child(2)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticker-strip__grid {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-md);
+  }
+
+  .ticker-strip__item::after {
+    display: none !important;
+  }
+
+  .ticker-strip {
+    padding: var(--space-lg) 0;
+  }
+}

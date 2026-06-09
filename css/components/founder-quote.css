@@ -1,0 +1,63 @@
+/* ============================================================
+   Component: Founder Quote
+   ============================================================ */
+
+.founder-quote {
+  background-color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-quote__content {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  padding: var(--space-2xl) 0;
+}
+
+/* Decorative large quote mark */
+.founder-quote__mark {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(6rem, 12vw, 10rem);
+  font-weight: var(--fw-bold);
+  color: rgba(var(--color-gold-rgb), 0.15);
+  line-height: 0.5;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.founder-quote__text {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-medium);
+  font-style: italic;
+  color: var(--color-charcoal);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+.founder-quote__attribution {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-sage);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wider);
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 768px) {
+  .founder-quote__text {
+    font-size: var(--fs-lg);
+  }
+
+  .founder-quote__mark {
+    font-size: 6rem;
+  }
+}

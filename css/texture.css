@@ -1,0 +1,9 @@
+/* ============================================================
+   Texture — Subtle farm motif repeating pattern
+   Adds personality to light backgrounds without visual clutter.
+   Only noticeable upon close inspection.
+   ============================================================ */
+
+.has-texture {
+  background: var(--color-white);
+}

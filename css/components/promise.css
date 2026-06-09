@@ -1,0 +1,196 @@
+/* ============================================================
+   Component: Promise — "We Treat Every Shipment Like a Promise"
+   ============================================================ */
+
+.promise {
+  background-color: var(--color-white);
+  position: relative;
+  padding: var(--space-3xl) 0;
+}
+
+.promise__split-layout {
+  display: grid;
+  grid-template-columns: 4.2fr 5.8fr;
+  gap: var(--space-3xl);
+  align-items: stretch; /* Both columns grow to the height of the taller one */
+}
+
+/* ── Left Column: Wrapper (the grid cell that owns the height) ─ */
+.promise__hero-wrapper {
+  /* No position, no height override — just stretches with the grid row */
+}
+
+/* ── Left Column: Hero Accent Panel ─────────────────────────── */
+.promise__hero-panel {
+  background: var(--color-forest);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-4xl) var(--space-3xl);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 120px;
+  overflow: hidden;
+  height: 100%; /* Stretch to match the top and bottom of the adjacent cards grid */
+  box-sizing: border-box;
+  box-shadow: 
+    0 16px 36px rgba(38, 140, 67, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Subtle texture matching other textured cards */
+.promise__hero-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255, 255, 255, 0.015) 20px,
+    rgba(255, 255, 255, 0.015) 21px
+  );
+  pointer-events: none;
+}
+
+.promise__hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.promise__hero-panel .promise__heading {
+  color: var(--color-white);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-snug);
+}
+
+.promise__hero-tagline {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-snug);
+  color: var(--color-white);
+  max-width: 520px;
+}
+
+.promise__hero-tagline .highlight-gold {
+  color: var(--color-gold);
+}
+
+.promise__hero-tagline .highlight-cream {
+  color: var(--color-cream);
+}
+
+.promise__hero-tagline .highlight-amber {
+  color: #E8A317;
+}
+
+.promise__hero-panel .promise__heading .highlight-gold {
+  color: var(--color-gold);
+}
+
+.promise__hero-panel .promise__heading .highlight-emerald {
+  color: var(--color-gold); /* Fallback highlights to clean gold on dark green */
+}
+
+/* ── Right Column: Cards Grid ───────────────────── */
+.promise__cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
+  gap: var(--space-xl);
+}
+
+.promise__feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-xl);
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-normal) var(--ease-smooth),
+              box-shadow var(--dur-normal) var(--ease-smooth);
+}
+
+.promise__feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.promise__feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--border-radius-sm);
+  background: rgba(var(--color-forest-rgb), 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-forest);
+  padding: 10px;
+  transition: transform var(--dur-fast) var(--ease-smooth),
+              background var(--dur-fast) var(--ease-smooth),
+              color var(--dur-fast) var(--ease-smooth);
+}
+
+.promise__feature-card:hover .promise__feature-icon {
+  transform: scale(1.1);
+  background: var(--color-forest);
+  color: var(--color-white);
+}
+
+.promise__feature-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-charcoal);
+  line-height: var(--lh-snug);
+  margin: 0;
+  transition: color var(--dur-fast) var(--ease-smooth);
+}
+
+.promise__feature-card:hover .promise__feature-title {
+  color: var(--color-forest);
+}
+
+.promise__feature-desc {
+  font-size: var(--fs-sm);
+  color: var(--color-slate);
+  line-height: var(--lh-relaxed);
+  margin: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 968px) {
+  .promise__split-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .promise__hero-wrapper {
+    /* Let the wrapper size naturally when stacked */
+  }
+
+  .promise__hero-panel {
+    height: auto;           /* Release the 100% height on mobile */
+    position: relative;     /* Disable sticky on mobile */
+    top: unset;
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  .promise__hero-panel .promise__heading,
+  .promise__hero-tagline {
+    font-size: var(--fs-2xl);
+  }
+
+  .promise__cards-grid {
+    grid-template-columns: 1fr; /* Stack cards in 1 column on mobile/tablet */
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .promise__feature-card {
+    padding: var(--space-lg);
+  }
+}

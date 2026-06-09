@@ -1,0 +1,417 @@
+/* ============================================================
+   UA IMPORTS & EXPORTS — Decorative Motifs & Brand Seals
+   ============================================================ */
+
+/* ── Section Container Context ──────────────────────────────── */
+.has-motifs {
+  position: relative;
+  overflow: hidden; /* Prevent background decorative elements from causing horizontal scroll */
+}
+
+/* ── Floating Botanical Wax Seal ────────────────────────────── */
+.brand-seal {
+  position: absolute;
+  top: 40px;
+  right: 5%;
+  width: 130px;
+  height: 130px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: auto;
+  cursor: pointer;
+  transform: rotate(6deg);
+  transition: transform var(--dur-normal) var(--ease-bounce), 
+              filter var(--dur-normal) var(--ease-smooth);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+/* Realistic organic wax outer shape */
+.brand-seal__outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 35% 35%, #FFDF6D 0%, #D4AF37 40%, #B8860B 85%, #8B6508 100%);
+  border-radius: 48% 52% 45% 55% / 53% 47% 55% 45%; /* Slightly irregular organic circle */
+  box-shadow: 
+    inset 0 -4px 10px rgba(0, 0, 0, 0.4),
+    inset 0 4px 10px rgba(255, 255, 255, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform var(--dur-normal) var(--ease-smooth);
+}
+
+/* Inner stamp impression ring */
+.brand-seal__inner {
+  position: absolute;
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  border: 2px dashed rgba(139, 101, 8, 0.4);
+  background: radial-gradient(circle at 35% 35%, #FFDF6D 0%, #C5A028 50%, #9B7506 100%);
+  box-shadow: 
+    inset 0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 0 -4px 8px rgba(255, 255, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Central emblem - detailed plant leaf */
+.brand-seal__emblem {
+  width: 42px;
+  height: 42px;
+  color: #5D4300;
+  filter: drop-shadow(0 -1px 1px rgba(255, 255, 255, 0.3)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+  transition: transform var(--dur-normal) var(--ease-bounce);
+  margin-top: 2px;
+}
+
+/* Circular curved stamp text */
+.brand-seal__text-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: seal-rotate 40s linear infinite;
+  pointer-events: none;
+}
+
+.brand-seal__text-path {
+  fill: #5D4300;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Shimmer overlay effect */
+.brand-seal__shimmer {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: none;
+  pointer-events: none;
+}
+
+/* Hover micro-interactions */
+.brand-seal:hover {
+  transform: rotate(-3deg) scale(1.08);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25)) drop-shadow(0 0 15px rgba(255, 206, 27, 0.2));
+}
+
+.brand-seal:hover .brand-seal__outer {
+  border-radius: 52% 48% 55% 45% / 47% 53% 45% 55%; /* Slight morphing shape */
+}
+
+.brand-seal:hover .brand-seal__emblem {
+  transform: scale(1.12) rotate(-5deg);
+}
+
+.brand-seal:hover .brand-seal__shimmer {
+  left: 150%;
+  transition: left 0.8s ease;
+}
+
+@keyframes seal-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Delicate Background Crop Motifs (Watermarks) ────────────── */
+.motif-watermark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  color: var(--color-forest);
+  opacity: 0.045; /* Ultra-subtle, elegant, barely visible */
+  transition: opacity var(--dur-slow) var(--ease-smooth), transform var(--dur-slow) var(--ease-smooth);
+}
+
+/* Specific positions to frame the content beautifully */
+.motif-watermark--top-left {
+  top: 4%;
+  left: -2%;
+  width: clamp(200px, 20vw, 350px);
+  height: auto;
+  transform: rotate(-15deg);
+}
+
+.motif-watermark--bottom-right {
+  bottom: 4%;
+  right: -2%;
+  width: clamp(220px, 22vw, 380px);
+  height: auto;
+  transform: rotate(15deg);
+}
+
+.motif-watermark--mid-left {
+  top: 50%;
+  left: -4%;
+  transform: translateY(-50%) rotate(45deg);
+  width: clamp(180px, 18vw, 300px);
+  height: auto;
+}
+
+/* Interactive section hover lightens/reveals motifs slightly */
+.has-motifs:hover .motif-watermark {
+  opacity: 0.065;
+}
+
+.has-motifs:hover .motif-watermark--top-left {
+  transform: rotate(-10deg) scale(1.03);
+}
+
+.has-motifs:hover .motif-watermark--bottom-right {
+  transform: rotate(10deg) scale(1.03);
+}
+
+/* ── Responsive Styling ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .brand-seal {
+    width: 110px;
+    height: 110px;
+    right: 3%;
+    top: 30px;
+  }
+  .brand-seal__emblem {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-seal {
+    width: 90px;
+    height: 90px;
+    right: 4%;
+    top: 20px;
+  }
+  .brand-seal__emblem {
+    width: 28px;
+    height: 28px;
+  }
+  .brand-seal__text-svg {
+    display: none; /* Hide circular text on smaller mobile screens for readability */
+  }
+  .motif-watermark {
+    opacity: 0.03; /* Even more subtle on mobile */
+  }
+  .motif-watermark--top-left {
+    left: -8%;
+    width: 180px;
+  }
+  .motif-watermark--bottom-right {
+    right: -8%;
+    width: 180px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .brand-seal__text-svg {
+    animation: none;
+  }
+  .brand-seal, 
+  .brand-seal__outer, 
+  .brand-seal__emblem, 
+  .motif-watermark,
+  .brand-tag,
+  .brand-tag__body {
+    transition: none !important;
+    animation: none !important;
+  }
+  .brand-seal:hover {
+    transform: rotate(6deg) !important;
+  }
+  .brand-tag:hover {
+    transform: rotate(-3deg) !important;
+  }
+}
+
+/* ── Hanging Cargo Transit Tag ──────────────────────────────── */
+.brand-tag-wrapper {
+  position: absolute;
+  top: 0;
+  left: 2.5%;
+  right: auto;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* The Hanging String */
+.brand-tag__string {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 206, 27, 0.4) 30%, rgba(255, 206, 27, 0.9));
+  transform-origin: top center;
+  position: relative;
+}
+
+/* The Tag Body */
+.brand-tag {
+  pointer-events: auto;
+  cursor: pointer;
+  transform-origin: top center;
+  transform: rotate(-3deg);
+  animation: tag-sway 6s ease-in-out infinite alternate;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+  transition: transform var(--dur-normal) var(--ease-bounce),
+              filter var(--dur-normal) var(--ease-smooth);
+}
+
+.brand-tag__body {
+  width: 110px;
+  background: var(--color-charcoal);
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  padding: 14px 10px 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Punch grommet at top of tag */
+.brand-tag__grommet {
+  width: 8px;
+  height: 8px;
+  background: var(--color-charcoal);
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Text layouts on the label */
+.brand-tag__title {
+  font-family: var(--font-heading);
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.brand-tag__meta {
+  font-family: var(--font-body);
+  font-size: 7px;
+  color: #888888;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  text-align: center;
+  border-top: 1px solid rgba(255, 206, 27, 0.15);
+  padding-top: 4px;
+  width: 100%;
+}
+
+.brand-tag__barcode {
+  width: 100%;
+  height: 14px;
+  margin-top: 6px;
+  opacity: 0.75;
+  color: var(--color-gold);
+  transition: opacity var(--dur-fast);
+}
+
+/* Interactive Hover state */
+.brand-tag:hover {
+  transform: rotate(2deg) scale(1.05);
+  animation-play-state: paused; /* Pause gentle swaying when interacting */
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 10px rgba(255, 206, 27, 0.15));
+}
+
+.brand-tag:hover .brand-tag__barcode {
+  opacity: 1;
+}
+
+/* Swaying Animation */
+@keyframes tag-sway {
+  0%   { transform: rotate(-4deg); }
+  100% { transform: rotate(2deg); }
+}
+
+/* ── Logistics Route & Compass Motifs ──────────────────────── */
+.motif-route {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  color: var(--color-gold);
+  opacity: 0.02; /* Extremely subtle */
+  transition: opacity var(--dur-slow) var(--ease-smooth), transform var(--dur-slow) var(--ease-smooth);
+}
+
+.motif-route--map {
+  top: 5%;
+  right: -5%;
+  width: clamp(350px, 30vw, 550px);
+  height: auto;
+}
+
+.motif-route--compass {
+  bottom: 2%;
+  left: -2%;
+  width: clamp(200px, 18vw, 320px);
+  height: auto;
+  transform: rotate(-10deg);
+}
+
+.has-motifs:hover .motif-route {
+  opacity: 0.035; /* Fades in beautifully when container is hovered */
+}
+
+.has-motifs:hover .motif-route--compass {
+  transform: rotate(5deg) scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .brand-tag-wrapper {
+    left: 1.5%;
+    right: auto;
+  }
+  .brand-tag__string {
+    height: 40px;
+  }
+  .brand-tag__body {
+    width: 90px;
+    padding: 12px 6px 6px 6px;
+  }
+  .brand-tag__title {
+    font-size: 7px;
+  }
+  .brand-tag__meta {
+    font-size: 6px;
+  }
+  .motif-route {
+    opacity: 0.015;
+  }
+  .motif-route--map {
+    right: -15%;
+    width: 280px;
+  }
+}
+
