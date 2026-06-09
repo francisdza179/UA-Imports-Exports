@@ -136,6 +136,23 @@
   fill: #fff;
 }
 
+.footer__cta-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-xl) 0;
+  flex-wrap: wrap;
+}
+
+.footer__cta-text {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: #3D2919;
+}
+
 /* ── Link Columns ──────────────────────────────── */
 .footer__col-title {
   font-family: var(--font-heading);

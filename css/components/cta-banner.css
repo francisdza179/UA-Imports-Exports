@@ -1,0 +1,26 @@
+.cta-banner {
+  padding: var(--space-section) 0;
+  background: linear-gradient(135deg, var(--color-cloud) 0%, var(--color-white) 100%);
+  text-align: center;
+}
+
+.cta-banner__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.cta-banner__heading {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-charcoal);
+}
+
+.cta-banner__text {
+  font-size: var(--fs-lg);
+  color: var(--color-slate);
+  line-height: var(--lh-relaxed);
+}

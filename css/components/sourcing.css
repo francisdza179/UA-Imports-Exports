@@ -13,10 +13,6 @@
   max-width: 680px;
 }
 
-.sourcing__eyebrow {
-  color: var(--color-gold);
-}
-
 .sourcing__heading {
   font-size: var(--fs-3xl);
   font-weight: var(--fw-extrabold);

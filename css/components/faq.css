@@ -169,6 +169,10 @@
   color: var(--color-charcoal);
 }
 
+.faq__footer-cta {
+  margin-top: var(--space-lg);
+}
+
 /* ── Responsive ──────────────────────────────── */
 
 @media (max-width: 768px) {
