@@ -86,6 +86,8 @@
 
 .about__image {
   width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   display: block;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-xl);
