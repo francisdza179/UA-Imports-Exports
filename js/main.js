@@ -9,6 +9,7 @@ import { initNavbar } from './navbar.js';
 import { initStorytellingCarousel } from './storytelling-carousel.js';
 import { initProductFilter } from './product-filter.js';
 import { initTestimonialsCarousel } from './testimonials-carousel.js';
+import { initFaqAccordion } from './faq-accordion.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all modules
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStorytellingCarousel();
   initProductFilter();
   initTestimonialsCarousel();
+  initFaqAccordion();
 
   console.log('✅ UA Imports & Exports — All modules initialized');
 });
