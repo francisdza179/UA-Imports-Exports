@@ -3,38 +3,28 @@ export function initCounterAnimation() {
 
   if (!counters.length) return;
 
+  counters.forEach((el) => animateCounter(el));
+
   const observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.3
+    threshold: 0
   };
-
-  counters.forEach((el) => el.textContent = '0');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const el = entry.target;
       if (entry.isIntersecting) {
-        if (el.dataset.animated !== 'true') {
-          el.dataset.animated = 'true';
+        if (el.dataset.entered === 'false') {
           animateCounter(el);
         }
+        el.dataset.entered = 'true';
       } else {
-        el.dataset.animated = 'false';
-        resetCounter(el);
+        el.dataset.entered = 'false';
       }
     });
   }, observerOptions);
 
   counters.forEach((el) => observer.observe(el));
-}
-
-function resetCounter(el) {
-  if (el.animationFrameId) {
-    cancelAnimationFrame(el.animationFrameId);
-    el.animationFrameId = null;
-  }
-  el.textContent = '0';
 }
 
 function animateCounter(el) {
@@ -45,7 +35,10 @@ function animateCounter(el) {
 
   if (el.animationFrameId) {
     cancelAnimationFrame(el.animationFrameId);
+    el.animationFrameId = null;
   }
+
+  el.textContent = '0';
 
   const startTime = performance.now();
 

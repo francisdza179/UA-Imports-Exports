@@ -10,7 +10,7 @@
   z-index: var(--z-nav);
   padding: var(--space-sm) 0;
   transition: all var(--dur-fast) var(--ease-smooth);
-  animation: fadeInDown var(--dur-normal) var(--ease-smooth) 0.4s both;
+  animation: fadeInDown var(--dur-normal) var(--ease-smooth) 0.4s backwards;
 }
 
 .navbar__inner {
@@ -252,10 +252,6 @@
 
 @media (max-width: 968px) {
   .navbar__links {
-    display: none;
-  }
-
-  .navbar__cta.hide-mobile {
     display: none;
   }
 
