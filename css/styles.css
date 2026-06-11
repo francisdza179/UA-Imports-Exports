@@ -1,4 +1,4 @@
-﻿/* ======== css/variables.css ======== */
+/* ======== css/variables.css ======== */
 /* ============================================================
    UA IMPORTS & EXPORTS — Design Tokens
    ============================================================ */
@@ -1167,6 +1167,11 @@ a:hover {
   background-color: var(--color-charcoal);
 }
 
+.hero--subpage {
+  height: 60vh;
+  min-height: 400px;
+}
+
 /* ── Video Background ──────────────────────────────── */
 .hero__video-container {
   position: absolute;
@@ -1371,6 +1376,11 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     bottom: 6rem;
+  }
+  
+  .hero--subpage {
+    height: 50svh;
+    min-height: 350px;
   }
 }
 
@@ -5570,6 +5580,7 @@ a:hover {
   cursor: pointer;
   transition: all var(--dur-fast) var(--ease-smooth);
   box-shadow: var(--shadow-sm);
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
@@ -5916,11 +5927,12 @@ a:hover {
 
 .storytelling__heading {
   font-family: var(--font-heading);
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-2xl);
   font-weight: var(--fw-extrabold);
   color: var(--color-charcoal);
   line-height: var(--lh-snug);
   margin-bottom: var(--space-md);
+  white-space: nowrap;
 }
 
 .storytelling__subtitle {
@@ -6023,9 +6035,6 @@ a:hover {
     gap: var(--space-md);
   }
 
-  .storytelling__heading {
-    font-size: var(--fs-2xl);
-  }
 }
 
 @media (max-width: 600px) {

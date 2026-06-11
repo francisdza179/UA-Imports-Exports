@@ -112,7 +112,7 @@ export function initStorytellingCarousel() {
   function startAutoplay() {
     autoplayInterval = setInterval(() => {
       goToSlide(currentSlide + 1);
-    }, 5000);
+    }, 6000);
   }
 
   function resetAutoplay() {

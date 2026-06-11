@@ -23,11 +23,12 @@
 
 .storytelling__heading {
   font-family: var(--font-heading);
-  font-size: var(--fs-3xl);
+  font-size: clamp(1.35rem, 1rem + 1vw, 1.85rem);
   font-weight: var(--fw-extrabold);
   color: var(--color-charcoal);
   line-height: var(--lh-snug);
   margin-bottom: var(--space-md);
+  white-space: nowrap;
 }
 
 .storytelling__subtitle {
@@ -130,9 +131,6 @@
     gap: var(--space-md);
   }
 
-  .storytelling__heading {
-    font-size: var(--fs-2xl);
-  }
 }
 
 @media (max-width: 600px) {

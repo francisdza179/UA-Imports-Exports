@@ -21,6 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductFilter();
   initTestimonialsCarousel();
   initFaqAccordion();
+  // Cleanup missing images and placeholders
+  document.querySelectorAll('.product-card').forEach(card => {
+    if (card.textContent.includes('Origin TBD')) {
+      card.style.display = 'none';
+    }
+  });
+
+  document.querySelectorAll('.product-card__image').forEach(img => {
+    img.addEventListener('error', function() {
+      const card = this.closest('.product-card');
+      if (card) card.style.display = 'none';
+    });
+    if (img.complete && img.naturalHeight === 0) {
+      const card = img.closest('.product-card');
+      if (card) card.style.display = 'none';
+    }
+  });
 
   console.log('✅ UA Imports & Exports — All modules initialized');
 });
