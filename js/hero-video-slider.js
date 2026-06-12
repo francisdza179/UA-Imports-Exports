@@ -13,19 +13,40 @@ export function initHeroVideoSlider() {
   let currentIndex = 0;
   let interval = null;
   let started = false;
+  let pendingTimeouts = new Set();
+
   const INTERVAL_TIME = 5000;
   const FADE_DURATION = 1800;
 
+  function clearPendingTimeouts() {
+    pendingTimeouts.forEach((id) => clearTimeout(id));
+    pendingTimeouts.clear();
+  }
+
+  function preloadVideo(video) {
+    if (video && video.getAttribute('preload') !== 'auto') {
+      video.setAttribute('preload', 'auto');
+      video.load();
+    }
+  }
+
   function showVideo(index) {
+    clearPendingTimeouts();
+
     videos.forEach((video, i) => {
-      video.classList.remove('is-active');
+      video.classList.remove('is-active', 'is-reset');
       if (i !== index) {
-        video.style.transform = 'translate3d(-50%, -50%, 0) scale(1)';
-        setTimeout(() => {
+        const id = setTimeout(() => {
+          pendingTimeouts.delete(id);
           if (!video.classList.contains('is-active')) {
             video.pause();
+            video.classList.add('is-reset');
+            requestAnimationFrame(() => {
+              video.classList.remove('is-reset');
+            });
           }
         }, FADE_DURATION);
+        pendingTimeouts.add(id);
       }
     });
 
@@ -40,12 +61,9 @@ export function initHeroVideoSlider() {
       playPromise.catch(() => {});
     }
 
-    // Preload the next two videos ahead for smoother transitions
+    // Preload the next video for smoother transitions
     const nextIndex = (index + 1) % videos.length;
-    const nextVideo = videos[nextIndex];
-    if (nextVideo && nextVideo.getAttribute('preload') !== 'auto') {
-      nextVideo.setAttribute('preload', 'auto');
-    }
+    preloadVideo(videos[nextIndex]);
 
     if (dots[index]) {
       dots[index].classList.add('is-active');
@@ -78,34 +96,38 @@ export function initHeroVideoSlider() {
     });
   });
 
-  // Progressively preload first batch for smooth startup
+  // Preload first batch for smooth startup
   function warmUpVideos() {
     for (let i = 1; i < Math.min(4, videos.length); i++) {
-      const video = videos[i];
-      if (video && video.getAttribute('preload') !== 'auto') {
-        video.setAttribute('preload', 'auto');
-      }
+      preloadVideo(videos[i]);
+    }
+  }
+
+  // Progressively preload remaining videos after playback starts
+  function preloadRemainingVideos() {
+    for (let i = 4; i < videos.length; i++) {
+      preloadVideo(videos[i]);
     }
   }
 
   function startPlayer() {
     if (started) return;
     started = true;
+    warmUpVideos();
     showVideo(0);
     startAutoplay();
+    setTimeout(preloadRemainingVideos, FADE_DURATION + 200);
   }
 
   // Start as soon as first video can play
   const firstVideo = videos[0];
   if (firstVideo.readyState >= 2) {
-    warmUpVideos();
     startPlayer();
   } else {
     firstVideo.addEventListener('canplay', () => {
-      warmUpVideos();
       startPlayer();
     }, { once: true });
-    setTimeout(startPlayer, 2500);
+    setTimeout(startPlayer, 3000);
   }
 
   document.addEventListener('visibilitychange', () => {

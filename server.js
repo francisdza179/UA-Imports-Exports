@@ -32,6 +32,12 @@ http.createServer((req, res) => {
         let parts = req.headers.range.replace(/bytes=/, "").split("-");
         let start = parseInt(parts[0], 10);
         let end = parts[1] ? parseInt(parts[1], 10) : stat.size - 1;
+        
+        if (start >= stat.size) {
+          res.writeHead(416, { 'Content-Range': `bytes */${stat.size}` });
+          return res.end();
+        }
+        
         let chunksize = (end - start) + 1;
         
         res.writeHead(206, {

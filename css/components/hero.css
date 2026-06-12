@@ -54,6 +54,11 @@
   transform: translate3d(-50%, -50%, 0) scale(1.06);
 }
 
+.hero__video.is-reset {
+  transition: none;
+  transform: translate3d(-50%, -50%, 0) scale(1);
+}
+
 /* 10. Sugarcane Video - Richer Saturation */
 .hero__video:nth-of-type(10) {
   filter: sepia(0.15) saturate(2.8) contrast(1.3) brightness(0.95);
