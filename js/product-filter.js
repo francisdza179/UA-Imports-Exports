@@ -26,19 +26,22 @@ export function initProductFilter() {
 
       // Wait for fade out animation to complete (400ms matching CSS)
       setTimeout(() => {
+        const ITEMS_PER_TAB = 16;
+        let visibleCount = 0;
+
         productCards.forEach(card => {
           const category = card.getAttribute('data-category');
-          const isFeatured = card.getAttribute('data-featured') === 'true';
           
-          let shouldShow = false;
+          let matches = false;
           if (filterValue === 'all') {
-            shouldShow = isFeatured;
+            matches = true;
           } else {
-            shouldShow = (category === filterValue);
+            matches = (category === filterValue);
           }
 
-          if (shouldShow) {
+          if (matches && visibleCount < ITEMS_PER_TAB) {
             card.classList.remove('is-hidden');
+            visibleCount++;
             // Slight delay before fading in to ensure display block has taken effect
             setTimeout(() => {
               card.classList.remove('fade-out');

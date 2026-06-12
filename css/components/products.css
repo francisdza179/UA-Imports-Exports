@@ -108,8 +108,8 @@
 }
 
 .product-card__image-wrapper {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   margin: 0 auto var(--space-md);
   border-radius: 50%;
   overflow: hidden;

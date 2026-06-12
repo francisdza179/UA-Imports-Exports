@@ -2809,8 +2809,8 @@ a:hover {
 }
 
 .product-card__image-wrapper {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   margin: 0 auto var(--space-md);
   border-radius: 50%;
   overflow: hidden;
@@ -5641,7 +5641,7 @@ a:hover {
 /* Grid Override (matching products.css) */
 .product-showcase__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-xl);
   margin-bottom: var(--space-3xl);
 }
@@ -5677,12 +5677,6 @@ a:hover {
 }
 
 /* Responsive Overrides */
-@media (max-width: 1200px) {
-  .product-showcase__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 @media (max-width: 1024px) {
   .product-showcase__grid {
     grid-template-columns: repeat(3, 1fr);
