@@ -4754,8 +4754,8 @@ a:hover {
 .image-marquee {
   width: 100%;
   overflow: hidden;
-  padding: 4rem 0;
-  background-color: var(--color-surface, #ffffff);
+  padding: 7rem 0 3rem;
+  background-color: transparent;
   position: relative;
   /* Add subtle top/bottom borders or shadows if needed */
 }
@@ -4834,7 +4834,7 @@ a:hover {
 /* Mobile Adjustments */
 @media screen and (max-width: 768px) {
   .image-marquee {
-    padding: 2.5rem 0;
+    padding: 4rem 0 2rem;
   }
   
   .image-marquee__item {

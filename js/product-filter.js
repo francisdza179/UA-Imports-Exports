@@ -10,47 +10,61 @@ export function initProductFilter() {
 
   if (!filterBtns.length || !productCards.length || !grid) return;
 
+  const ITEMS_PER_TAB = 16;
+
+  function filterGrid(filterValue) {
+    // First hide all cards
+    productCards.forEach(card => {
+      card.classList.add('is-hidden');
+    });
+
+    if (filterValue === 'all') {
+      const categories = ['fruits', 'vegetables', 'roots', 'others'];
+      const perCategory = ITEMS_PER_TAB / categories.length;
+      const counts = { fruits: 0, vegetables: 0, roots: 0, others: 0 };
+
+      productCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (counts[category] < perCategory) {
+          card.classList.remove('is-hidden');
+          counts[category]++;
+          setTimeout(() => {
+            card.classList.remove('fade-out');
+          }, 50);
+        }
+      });
+    } else {
+      let visibleCount = 0;
+      productCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (category === filterValue && visibleCount < ITEMS_PER_TAB) {
+          card.classList.remove('is-hidden');
+          visibleCount++;
+          setTimeout(() => {
+            card.classList.remove('fade-out');
+          }, 50);
+        }
+      });
+    }
+  }
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active class from all buttons
       filterBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
       btn.classList.add('active');
 
       const filterValue = btn.getAttribute('data-filter');
 
-      // First, fade out all cards
       productCards.forEach(card => {
         card.classList.add('fade-out');
       });
 
-      // Wait for fade out animation to complete (400ms matching CSS)
       setTimeout(() => {
-        const ITEMS_PER_TAB = 16;
-        let visibleCount = 0;
-
-        productCards.forEach(card => {
-          const category = card.getAttribute('data-category');
-          
-          let matches = false;
-          if (filterValue === 'all') {
-            matches = true;
-          } else {
-            matches = (category === filterValue);
-          }
-
-          if (matches && visibleCount < ITEMS_PER_TAB) {
-            card.classList.remove('is-hidden');
-            visibleCount++;
-            // Slight delay before fading in to ensure display block has taken effect
-            setTimeout(() => {
-              card.classList.remove('fade-out');
-            }, 50);
-          } else {
-            card.classList.add('is-hidden');
-          }
-        });
+        filterGrid(filterValue);
       }, 400);
     });
   });
+
+  // Initialize: show first 16 items for "all" without animation
+  filterGrid('all');
 }
