@@ -238,33 +238,6 @@
   animation-delay: -3s;
 }
 
-/* ── Decorative accent behind the image ─────── */
-.about__image-accent {
-  position: absolute;
-  width: 92%;
-  height: 92%;
-  border: 2px solid rgba(var(--color-gold-rgb), 0.2);
-  border-radius: var(--border-radius-lg);
-  top: 22px;
-  left: 22px;
-  z-index: 0;
-  transition: all var(--dur-normal) var(--ease-smooth);
-}
-
-.about__image-accent::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border: 1px solid rgba(var(--color-emerald-rgb), 0.08);
-  border-radius: calc(var(--border-radius-lg) + 6px);
-}
-
-.about__image-block:hover .about__image-accent {
-  top: 16px;
-  left: 16px;
-  border-color: rgba(var(--color-gold-rgb), 0.4);
-}
-
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 900px) {
   .about__cue--mango {

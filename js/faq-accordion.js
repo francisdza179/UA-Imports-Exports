@@ -12,4 +12,14 @@ export function initFaqAccordion() {
       });
     });
   });
+
+  const questionsContainer = faqSection.querySelector('.faq__grid');
+  if (questionsContainer) {
+    document.addEventListener('click', (event) => {
+      if (questionsContainer.contains(event.target)) return;
+      details.forEach((item) => {
+        item.open = false;
+      });
+    });
+  }
 }

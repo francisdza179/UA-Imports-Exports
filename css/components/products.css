@@ -261,11 +261,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-sm);
   }
-
-  .products__category-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 @media (max-width: 600px) {

@@ -130,6 +130,35 @@ export function initStorytellingCarousel() {
     });
   });
 
+  // ── Arrow Navigation ────────────────────────────────
+  const prevBtn = carousel.querySelector('.storytelling__btn--prev');
+  const nextBtn = carousel.querySelector('.storytelling__btn--next');
+
+  function goNext() {
+    if (isTransitioning) return;
+    goToSlide(currentSlide + 1);
+    resetAutoplay();
+  }
+
+  function goPrev() {
+    if (isTransitioning) return;
+    if (currentSlide === 0) {
+      // Seamlessly wrap from the first slide to the last real one by jumping
+      // to the cloned first slide (off-screen) and animating back one step.
+      slidesContainer.style.transition = 'none';
+      slidesContainer.style.transform = `translateX(-${originalSlideCount * 100}%)`;
+      slidesContainer.offsetHeight; // Force reflow so the jump is applied instantly
+      currentSlide = originalSlideCount;
+      goToSlide(originalSlideCount - 1);
+    } else {
+      goToSlide(currentSlide - 1);
+    }
+    resetAutoplay();
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', goNext);
+  if (prevBtn) prevBtn.addEventListener('click', goPrev);
+
   // Start the autoplay initially
   startAutoplay();
 }

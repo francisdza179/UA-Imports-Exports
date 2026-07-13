@@ -4,9 +4,12 @@
  */
 
 export function initProductFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const productCards = document.querySelectorAll('.product-card');
-  const grid = document.getElementById('product-grid');
+  const section = document.getElementById('product-showcase');
+  if (!section) return;
+
+  const filterBtns = section.querySelectorAll('.filter-btn');
+  const productCards = section.querySelectorAll('.product-card');
+  const grid = section.querySelector('#product-grid');
 
   if (!filterBtns.length || !productCards.length || !grid) return;
 

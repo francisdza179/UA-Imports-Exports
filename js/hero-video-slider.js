@@ -5,8 +5,11 @@
    ============================================================ */
 
 export function initHeroVideoSlider() {
-  const videos = document.querySelectorAll('.hero__video');
-  const dots = document.querySelectorAll('.hero__video-dot');
+  const hero = document.getElementById('hero');
+  if (!hero) return;
+
+  const videos = hero.querySelectorAll('.hero__video');
+  const dots = hero.querySelectorAll('.hero__video-dot');
 
   if (videos.length === 0) return;
 

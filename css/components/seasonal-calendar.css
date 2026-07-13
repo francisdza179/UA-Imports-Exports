@@ -16,6 +16,8 @@
 /* ── Calendar Table ──────────────────────────── */
 .seasonal-calendar__table-wrap {
   overflow-x: auto;
+  max-height: 480px;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: var(--border-radius-lg);
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -41,6 +43,9 @@
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.06);
   background: var(--color-cloud);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .seasonal-calendar__month-row th:first-child {
