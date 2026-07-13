@@ -302,25 +302,100 @@
 
 @media (max-width: 600px) {
   .footer__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl) var(--space-md);
     padding-top: var(--space-2xl);
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+    order: 1;
+  }
+
+  .footer__description {
+    max-width: 100%;
+  }
+
+  /* Quick Links Column */
+  .footer__grid > .footer__col:nth-child(2) {
+    grid-column: 1 / 2;
+    order: 2;
+    text-align: center;
+  }
+
+  .footer__grid > .footer__col:nth-child(2) .footer__links {
+    align-items: center;
+  }
+
+  /* Our Products Column */
+  .footer__grid > .footer__col:nth-child(4) {
+    grid-column: 2 / 3;
+    order: 3;
+    text-align: center;
+  }
+
+  .footer__grid > .footer__col:nth-child(4) .footer__links {
+    align-items: center;
+  }
+
+  /* Contact Info Column */
+  .footer__grid > .footer__col:nth-child(3) {
+    grid-column: 1 / -1;
+    order: 4;
+    text-align: center;
+    margin-top: var(--space-md);
+  }
+
+  .footer__grid > .footer__col:nth-child(3) .footer__contact {
+    align-items: center;
+  }
+
+  .footer__grid > .footer__col:nth-child(3) .footer__contact-item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer__cta-row {
+    grid-column: 1 / -1;
+    order: 5;
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
   }
 
   .footer__certs-row {
     grid-column: 1 / -1;
+    order: 6;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: var(--space-lg);
+    padding-top: var(--space-lg);
+    margin-top: var(--space-md);
+  }
+
+  .footer__social {
+    justify-content: center;
+    width: 100%;
     gap: var(--space-md);
   }
 
   .footer__certs-logos {
+    justify-content: center;
+    width: 100%;
     flex-wrap: wrap;
     gap: var(--space-md);
+  }
+
+  .footer__certs-row-img {
+    height: 35px;
+    opacity: 0.85;
   }
 
   .footer__bottom {
     flex-direction: column;
     text-align: center;
+    gap: var(--space-md);
   }
 }

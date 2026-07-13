@@ -1,4 +1,96 @@
 /* ============================================================
+   Component: Friction Overview (Pillars)
+   ============================================================ */
+.friction {
+  padding: var(--space-section) 0;
+}
+
+.friction__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.friction__heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--color-charcoal);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-md);
+}
+
+.friction__subtitle {
+  font-size: var(--fs-lg);
+  color: var(--color-slate);
+  line-height: var(--lh-relaxed);
+}
+
+.friction__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.friction__card {
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-normal) var(--ease-smooth);
+}
+
+.friction__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(var(--color-gold-rgb), 0.4);
+}
+
+.friction__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--color-forest-rgb), 0.08);
+  color: var(--color-forest);
+  margin-bottom: var(--space-lg);
+}
+
+.friction__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.friction__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-sm);
+  line-height: var(--lh-tight);
+}
+
+.friction__desc {
+  font-size: var(--fs-base);
+  color: var(--color-slate);
+  line-height: var(--lh-relaxed);
+}
+
+@media (max-width: 900px) {
+  .friction__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .friction__grid { grid-template-columns: 1fr; }
+}
+
+/* Tabbed panels */
+.process__panel[hidden] { display: none; }
+
+/* ============================================================
    Component: Process — Premium Alternating Timeline
    ============================================================ */
 

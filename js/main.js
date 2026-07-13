@@ -10,6 +10,8 @@ import { initStorytellingCarousel } from './storytelling-carousel.js';
 import { initProductFilter } from './product-filter.js';
 import { initTestimonialsCarousel } from './testimonials-carousel.js';
 import { initFaqAccordion } from './faq-accordion.js';
+import { initForms } from './forms.js';
+import { initProcessTabs } from './process-tabs.js';
 
 /* Run each initializer in isolation so a failure in one module can never
    block the others. This is critical: the reveal system adds the visibility
@@ -35,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   safeInit('productFilter', initProductFilter);
   safeInit('testimonialsCarousel', initTestimonialsCarousel);
   safeInit('faqAccordion', initFaqAccordion);
+  safeInit('forms', initForms);
+  safeInit('processTabs', initProcessTabs);
 
   // Cleanup: hide product cards with missing images / placeholder text.
   // Scoped to the home showcase so it never affects other pages (e.g. the

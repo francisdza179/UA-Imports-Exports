@@ -297,7 +297,11 @@
           <h2 class="quick-inquiry__heading">Ready to <span class="highlight">Partner</span> With Us?</h2>
           <p class="quick-inquiry__text">Whether you're a buyer, distributor, or retail partner — tell us what you need and we'll get back to you within 24 hours with a custom quote.</p>
         </div>
-        <form action="#" method="POST" class="quick-inquiry__form">
+        <form action="https://api.web3forms.com/submit" method="POST" class="quick-inquiry__form">
+          <input type="hidden" name="access_key" value="3623a6a4-f0b3-4ecf-ac19-3ecc9eacfc86">
+          <input type="hidden" name="subject" value="New Inquiry — About Us">
+          <input type="hidden" name="from_name" value="UA Imports Website">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="quick-inquiry__input-wrap">
             <svg class="quick-inquiry__input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             <input type="text" name="name" placeholder="Your Name" required class="quick-inquiry__input">
@@ -319,6 +323,7 @@
           <div class="quick-inquiry__form-submit" style="grid-column: 1 / -1;">
             <button type="submit" class="btn btn-gold">Start Your Inquiry</button>
           </div>
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </div>

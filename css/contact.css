@@ -106,6 +106,28 @@
   margin-top: var(--space-sm);
 }
 
+.contact-form .form-status {
+  margin-top: var(--space-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-sm);
+}
+
+.form-status--success {
+  background: rgba(var(--color-forest-rgb), 0.1);
+  color: var(--color-forest);
+}
+
+.form-status--error {
+  background: rgba(220, 38, 38, 0.1);
+  color: #b91c1c;
+}
+
+.form-status--loading {
+  color: var(--color-slate);
+}
+
 /* ── Info Column ─────────────────────────── */
 .contact-page__info-column {
   display: flex;

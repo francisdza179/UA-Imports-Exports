@@ -111,6 +111,29 @@
   justify-content: flex-start;
 }
 
+.quick-inquiry__form .form-status {
+  grid-column: 1 / -1;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  margin-top: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius-sm);
+}
+
+.form-status--success {
+  background: rgba(var(--color-forest-rgb), 0.1);
+  color: var(--color-forest);
+}
+
+.form-status--error {
+  background: rgba(220, 38, 38, 0.1);
+  color: #b91c1c;
+}
+
+.form-status--loading {
+  color: var(--color-slate);
+}
+
 @media (max-width: 968px) {
   .quick-inquiry__inner {
     grid-template-columns: 1fr;
