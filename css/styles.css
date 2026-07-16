@@ -1536,6 +1536,10 @@ a:hover {
   position: relative;
 }
 
+.about__header {
+  margin-bottom: var(--space-xl);
+}
+
 .about__heading {
   font-size: var(--fs-3xl);
   font-weight: var(--fw-extrabold);
@@ -1893,12 +1897,20 @@ a:hover {
 
 @media (max-width: 768px) {
   .about__content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-2xl);
   }
 
+  .about__header {
+    order: 1;
+    text-align: center;
+  }
+
   .about__image-block {
-    order: -1;
+    order: 2;
+    max-width: 340px;
+    margin: 0 auto var(--space-xl);
   }
 
   .about__image-wrapper {
@@ -1909,6 +1921,10 @@ a:hover {
   .about__image {
     max-width: 340px;
     margin: 0 auto;
+  }
+
+  .about__description {
+    order: 3;
   }
 
   .about__cue--mango {
