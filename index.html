@@ -20,9 +20,51 @@
   <meta property="og:url" content="https://www.uaimportsexports.com">
   <meta property="og:site_name" content="UA Imports & Exports">
 
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.uaimportsexports.com/">
+
+  <!-- Google Search Console verification (replace YOUR_VERIFICATION_CODE with the code from search.google.com/search-console) -->
+  <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
+
+  <!-- Bing Webmaster Tools verification (replace YOUR_BING_CODE with the code from bing.com/webmasters) -->
+  <meta name="msvalidate.01" content="YOUR_BING_CODE">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UA Imports & Exports — Farm Fresh. Globally Delivered.">
+  <meta name="twitter:description" content="Delivering South India's finest agro produce to the world. Premium Tender Coconuts, Cassava, Alphonso Mangoes, Drumsticks, and Shallots — FSSAI & APEDA compliant, export-ready.">
+  <meta name="twitter:image" content="https://www.uaimportsexports.com/assets/images/Preview%20Images/index-preview.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "UA Imports & Exports",
+    "url": "https://www.uaimportsexports.com/",
+    "logo": "https://www.uaimportsexports.com/assets/images/logo/logo-symbol.png",
+    "image": "https://www.uaimportsexports.com/assets/images/Preview%20Images/index-preview.png",
+    "description": "Delivering South India's finest agro produce to the world. Premium Tender Coconuts, Cassava, Alphonso Mangoes, Drumsticks, and Shallots — FSSAI & APEDA compliant, export-ready.",
+    "email": ["info@uaimportsexports.com", "uaimportsexports@gmail.com"],
+    "telephone": ["+971502983183", "+919150478528"],
+    "address": { "@type": "PostalAddress", "addressRegion": "South India", "addressCountry": "IN" },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.uaimportsexports.com/" }
+    ]
+  }
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="alternate icon" type="image/png" href="assets/images/logo/logo-symbol.png">
+  <link rel="manifest" href="webmanifest">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +74,18 @@
   <!-- CSS (consolidated for performance) -->
   <link rel="stylesheet" href="css/styles.css">
 
+<script>
+  document.documentElement.classList.add('js');
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      if (!document.documentElement.classList.contains('reveal-ready')) {
+        document.querySelectorAll('[data-reveal]').forEach(function (el) {
+          el.classList.add('is-revealed');
+        });
+      }
+    }, 1500);
+  });
+</script>
 </head>
 <body>
 
@@ -182,24 +236,35 @@
 
         <!-- Tile 2: Hero Image -->
         <div class="bento-tile bento-tile--image" data-reveal="fade-up" data-reveal-delay="1">
-          <img src="assets/images/Home Page Images/Bags of Onions.png" alt="Bags of Onions" loading="lazy">
-          <div class="bento-image-overlay"></div>
+          <div class="bento-tile__image-wrap">
+            <img src="assets/images/Homepage%20Hero%20Image/Bags%20of%20Onions.png" alt="Bags of Onions" loading="lazy">
+            <div class="bento-image-overlay"></div>
+          </div>
+          <div class="bento-image-label">
+            <div class="bento-image-label__icon-wrap">
+              <svg class="bento-image-label__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div class="bento-image-label__content">
+              <strong class="bento-image-label__title"><span>100%</span> Ethically Sourced</strong>
+              <span class="bento-image-label__sub">Fair-Trade Partnerships</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Tile 3: Info - Partner Farms -->
+        <!-- Tile 3: Info - Own Farms -->
         <div class="bento-tile bento-tile--info" data-reveal="fade-up" data-reveal-delay="2">
-          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h.01"/><path d="M9 13h.01"/><path d="M9 17h.01"/></svg>
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 14c0-3-3-5-7-5 0 3 3 5 7 5z"/></svg>
+          <p class="info-number">15+</p>
+          <p class="info-label">Own Farms</p>
+          <p class="info-desc">Direct estate cultivation giving us full control over quality, yield &amp; supply</p>
+        </div>
+
+        <!-- Tile 4: Info - Partner Farms -->
+        <div class="bento-tile bento-tile--info" data-reveal="fade-up" data-reveal-delay="2">
+          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h9l1 7"/><path d="M7 4v7"/><path d="M14 10l1 5"/><path d="M5 19v0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v0"/><path d="M13 19v0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v0"/><path d="M9 10h3"/><circle cx="7.5" cy="19" r="2"/><circle cx="17.5" cy="19" r="2"/></svg>
           <p class="info-number">50+</p>
           <p class="info-label">Partner Farms</p>
           <p class="info-desc">Curated network of trusted growers across Kerala, Tamil Nadu &amp; Karnataka</p>
-        </div>
-
-        <!-- Tile 4: Info - Ethically Sourced -->
-        <div class="bento-tile bento-tile--info bento-tile--cert" data-reveal="fade-up" data-reveal-delay="3">
-          <svg class="bento-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          <p class="info-number">100%</p>
-          <p class="info-label">Ethically Sourced</p>
-          <p class="info-desc">Fair-trade partnerships with audited supply chain compliance</p>
         </div>
 
       </div>
@@ -208,24 +273,28 @@
     <div class="image-marquee" aria-label="Our Export Range">
       <div class="image-marquee__track">
         <div class="image-marquee__content">
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Alphonso%20Mango.png" alt="Alphonso Mango" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/King%20Coconut.png" alt="King Coconut" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Cassava%20Root.png" alt="Cassava Root" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Drumstick.png" alt="Drumstick" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Shallots.png" alt="Shallot" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Turmeric%20Root.png" alt="Turmeric Root" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Rambutan.png" alt="Rambutan" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Pineapple.png" alt="Pineapple" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Alphonso%20Mango.png" alt="Alphonso Mango" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Apples.png" alt="Apples" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Capsicum.png" alt="Capsicum" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Cassava%20Root.png" alt="Cassava Root" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Drumsticks.png" alt="Drumsticks" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Eggplant.png" alt="Eggplant" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/King%20Tender%20Coconut.png" alt="King Tender Coconut" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Pineapple.png" alt="Pineapple" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Shallots.png" alt="Shallots" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Tomatoes.png" alt="Tomatoes" loading="lazy"></div>
         </div>
         <div class="image-marquee__content" aria-hidden="true">
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Alphonso%20Mango.png" alt="" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/King%20Coconut.png" alt="" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Cassava%20Root.png" alt="" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Drumstick.png" alt="" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Shallots.png" alt="" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Turmeric%20Root.png" alt="" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Rambutan.png" alt="" loading="lazy"></div>
-          <div class="image-marquee__item"><img src="assets/images/Agro%20Produce/Pineapple.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Alphonso%20Mango.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Apples.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Capsicum.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Cassava%20Root.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Drumsticks.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Eggplant.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/King%20Tender%20Coconut.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Pineapple.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Shallots.png" alt="" loading="lazy"></div>
+          <div class="image-marquee__item"><img src="assets/images/About%20Overview%20Marquee%20Images/Tomatoes.png" alt="" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -253,415 +322,7 @@
 
       <!-- Grid -->
       <div class="product-showcase__grid" id="product-grid" data-reveal="fade-up" data-reveal-delay="2">
-        <!-- Alphonso Mango -->
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Alphonso%20Mango.jpg" alt="Alphonso Mango" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Alphonso Mango</h3>
-        </div>
-        <!-- Apple -->
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Apple.jpg" alt="Apple" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Apple</h3>
-        </div>
-        <!-- Areca Nut -->
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Areca%20Nut.jpg" alt="Areca Nut" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Areca Nut</h3>
-        </div>
-
-        <!-- Ash Gourd -->
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Ash%20Gourd.jpg" alt="Ash Gourd" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Ash Gourd</h3>
-        </div>
-        <!-- Baby Corn -->
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Baby%20Corn.jpg" alt="Baby Corn" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Baby Corn</h3>
-        </div>
-        <!-- Baby Potatoes -->
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Baby%20Potatoes.jpg" alt="Baby Potatoes" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Baby Potatoes</h3>
-        </div>
-        <!-- Beetroot -->
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Beetroot.jpg" alt="Beetroot" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Beetroot</h3>
-        </div>
-        <!-- Bitter Gourd -->
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Bitter%20Gourd.jpg" alt="Bitter Gourd" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Bitter Gourd</h3>
-        </div>
-        <!-- Black Grapes -->
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Black%20Grapes.jpg" alt="Black Grapes" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Black Grapes</h3>
-        </div>
-        <!-- Black Pepper -->
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Black%20Pepper.jpg" alt="Black Pepper" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Black Pepper</h3>
-        </div>
-        <!-- Bottle Gourd -->
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Bottle%20Gourd.jpg" alt="Bottle Gourd" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Bottle Gourd</h3>
-        </div>
-        <!-- Carrot -->
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Carrot.jpg" alt="Carrot" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Carrot</h3>
-        </div>
-        <!-- Cashew Nuts -->
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Cashew%20Nuts.jpg" alt="Cashew Nuts" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cashew Nuts</h3>
-        </div>
-        <!-- Cassava Root -->
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Cassava%20Root.jpg" alt="Cassava Root" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cassava Root</h3>
-        </div>
-        <!-- Cavendish Banana -->
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Cavendish%20Banana.jpg" alt="Cavendish Banana" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cavendish Banana</h3>
-        </div>
-        <!-- Cinnamon -->
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Cinnamon.jpg" alt="Cinnamon" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cinnamon</h3>
-        </div>
-
-        <!-- ===== Additional Fruits ===== -->
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Corn.jpg" alt="Corn" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Corn</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Custard%20Apple.jpg" alt="Custard Apple" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Custard Apple</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Dragon%20Fruit.jpg" alt="Dragon Fruit" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Dragon Fruit</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Green%20Grapes.jpg" alt="Green Grapes" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Green Grapes</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Guava.jpg" alt="Guava" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Guava</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Indian%20Gooseberry.jpg" alt="Indian Gooseberry" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Indian Gooseberry</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Jackfruit.jpg" alt="Jackfruit" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Jackfruit</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/King%20Coconut.jpg" alt="King Coconut" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">King Coconut</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Litchi.jpg" alt="Litchi" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Litchi</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Mangosteen.jpg" alt="Mangosteen" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Mangosteen</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Oranges.jpg" alt="Oranges" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Oranges</h3>
-        </div>
-        <div class="product-card" data-category="fruits" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Fruits/Papaya.jpg" alt="Papaya" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Papaya</h3>
-        </div>
-
-        <!-- ===== Additional Vegetables ===== -->
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Baby%20Potatoes.png" alt="Baby Potatoes" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Baby Potatoes</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Beetroot.png" alt="Beetroot" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Beetroot</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Cabbage.jpg" alt="Cabbage" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cabbage</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Capsicum.jpg" alt="Capsicum" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Capsicum</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Cauliflower.jpg" alt="Cauliflower" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cauliflower</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Cluster%20Beans.jpg" alt="Cluster Beans" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cluster Beans</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Corn.png" alt="Corn" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Corn</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Drumstick.jpg" alt="Drumstick" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Drumstick</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Dry%20Red%20Chillies.png" alt="Dry Red Chillies" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Dry Red Chillies</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Eggplant.jpg" alt="Eggplant" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Eggplant</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Green%20Chillies.jpg" alt="Green Chillies" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Green Chillies</h3>
-        </div>
-        <div class="product-card" data-category="vegetables" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Fresh%20Vegetables/Ivy%20Gourd.jpg" alt="Ivy Gourd" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Ivy Gourd</h3>
-        </div>
-
-        <!-- ===== Additional Roots, Bulbs & Tubers ===== -->
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Arrowroot.png" alt="Arrowroot" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Arrowroot</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Colocasia.jpg" alt="Colocasia" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Colocasia</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Elephant%20Foot%20Yam.jpg" alt="Elephant Foot Yam" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Elephant Foot Yam</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Galangal.png" alt="Galangal" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Galangal</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Garlic.jpg" alt="Garlic" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Garlic</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Ginger.jpg" alt="Ginger" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Ginger</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Lotus%20Root.jpg" alt="Lotus Root" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Lotus Root</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Parsnip.jpg" alt="Parsnip" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Parsnip</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Potato.jpg" alt="Potato" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Potato</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Purple%20Yam.jpg" alt="Purple Yam" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Purple Yam</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Red%20Onion.jpg" alt="Red Onion" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Red Onion</h3>
-        </div>
-        <div class="product-card" data-category="roots" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Roots%2C%20Bulbs%20%26%20Tubers/Shallots.jpg" alt="Shallots" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Shallots</h3>
-        </div>
-
-        <!-- ===== Additional Seeds, Spices, Nuts & Others ===== -->
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Arrowroot.jpg" alt="Arrowroot" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Arrowroot</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Cloves.jpg" alt="Cloves" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cloves</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Coffee%20Beans.jpg" alt="Coffee Beans" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Coffee Beans</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Coriander%20Seeds.jpg" alt="Coriander Seeds" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Coriander Seeds</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Cumin%20Seeds.jpg" alt="Cumin Seeds" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Cumin Seeds</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Curry%20Powder.jpg" alt="Curry Powder" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Curry Powder</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Dry%20Red%20Chillies.jpg" alt="Dry Red Chillies" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Dry Red Chillies</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Fennel%20Seeds.jpg" alt="Fennel Seeds" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Fennel Seeds</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Fenugreek%20Seeds.jpg" alt="Fenugreek Seeds" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Fenugreek Seeds</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Galangal.jpg" alt="Galangal" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Galangal</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Green%20Cardamom.jpg" alt="Green Cardamom" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Green Cardamom</h3>
-        </div>
-        <div class="product-card" data-category="others" data-featured="true">
-          <div class="product-card__image-wrapper">
-            <img src="assets/images/Our%20Full%20Product%20Range/Seeds%2C%20Spices%2C%20Nuts%20%26%20Others/Mace.jpg" alt="Mace" class="product-card__image" loading="lazy">
-          </div>
-          <h3 class="product-card__name">Mace</h3>
-        </div>
+        <!-- Product cards are rendered from js/product-data.js by js/product-filter.js. Edit the data file to change the showcase. -->
       </div>
 
       <div class="product-showcase__note" data-reveal="fade-up" data-reveal-delay="3">
@@ -713,7 +374,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
           <h3 class="value-prop__card-title">Certified Quality Compliance</h3>
-          <p class="value-prop__card-desc">Every export meets FSSAI, APEDA, and international phytosanitary standards &mdash; with lab-tested freshness and full documentation.</p>
+          <p class="value-prop__card-desc">Every export meets FSSAI, APEDA, NABL, and international phytosanitary standards &mdash; with lab-tested freshness and full documentation.</p>
         </div>
         <div class="value-prop__card" data-reveal="fade-up" data-reveal-delay="2">
           <div class="value-prop__icon">
@@ -754,7 +415,7 @@
               <div class="storytelling__grid">
                 <div class="storytelling__card" data-reveal="carousel-right" data-reveal-delay="0">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Empowering%20Local%20Farmers.png" alt="Empowering Local Farmers" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Empowering%20Local%20Farmers.png" alt="Empowering Local Farmers" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Empowering Local Farmers</h3>
@@ -763,7 +424,7 @@
                 </div>
                 <div class="storytelling__card" data-reveal="carousel-right" data-reveal-delay="1">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Sustainable%20Harvesting%20Practices.png" alt="Sustainable Harvesting Practices" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Sustainable%20Harvesting%20Practices.png" alt="Sustainable Harvesting Practices" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Sustainable Harvesting Practices</h3>
@@ -772,7 +433,7 @@
                 </div>
                 <div class="storytelling__card" data-reveal="carousel-right" data-reveal-delay="2">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Community-Driven%20Sourcing.png" alt="Community-Driven Sourcing" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Community-Driven%20Sourcing.png" alt="Community-Driven Sourcing" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Community-Driven Sourcing</h3>
@@ -781,7 +442,7 @@
                 </div>
                 <div class="storytelling__card" data-reveal="carousel-right" data-reveal-delay="3">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Seasonal%20&%20Regional%20Expertise.png" alt="Seasonal & Regional Expertise" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Impact%20at%20the%20Source/Seasonal%20&%20Regional%20Expertise.png" alt="Seasonal & Regional Expertise" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Seasonal & Regional Expertise</h3>
@@ -801,7 +462,7 @@
               <div class="storytelling__grid">
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Harvest-Aligned%20Scheduling.png" alt="Harvest-Aligned Scheduling" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Harvest-Aligned%20Scheduling.png" alt="Harvest-Aligned Scheduling" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Harvest-Aligned Scheduling</h3>
@@ -810,7 +471,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Temperature-Aware%20Handling.png" alt="Temperature-Aware Handling" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Temperature-Aware%20Handling.png" alt="Temperature-Aware Handling" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Temperature-Aware Handling</h3>
@@ -819,7 +480,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Moisture%20&%20Damage%20Control.png" alt="Moisture & Damage Control" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Moisture%20&%20Damage%20Control.png" alt="Moisture & Damage Control" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Moisture & Damage Control</h3>
@@ -828,7 +489,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Rapid%20Port%20Dispatch.png" alt="Rapid Port Dispatch" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/How%20We%20Protect%20Freshness/Rapid%20Port%20Dispatch.png" alt="Rapid Port Dispatch" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Rapid Port Dispatch</h3>
@@ -848,7 +509,7 @@
               <div class="storytelling__grid">
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Clear,%20Predictable%20Communication.png" alt="Clear, Predictable Communication" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Clear,%20Predictable%20Communication.png" alt="Clear, Predictable Communication" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Clear, Predictable Communication</h3>
@@ -857,7 +518,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Flexible%20Order%20Structuring.png" alt="Flexible Order Structuring" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Flexible%20Order%20Structuring.png" alt="Flexible Order Structuring" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Flexible Order Structuring</h3>
@@ -866,7 +527,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Dedicated%20Buyer%20Support.png" alt="Dedicated Buyer Support" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Dedicated%20Buyer%20Support.png" alt="Dedicated Buyer Support" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Dedicated Buyer Support</h3>
@@ -875,7 +536,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Post-Shipment%20Follow-Up.png" alt="Post-Shipment Follow-Up" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Global%20Buyer%20Experience/Post-Shipment%20Follow-Up.png" alt="Post-Shipment Follow-Up" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Post-Shipment Follow-Up</h3>
@@ -895,7 +556,7 @@
               <div class="storytelling__grid">
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Variety%20&%20Grade%20Knowledge.png" alt="Variety & Grade Knowledge" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Variety%20&%20Grade%20Knowledge.png" alt="Variety & Grade Knowledge" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Variety & Grade Knowledge</h3>
@@ -904,7 +565,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Market-Specific%20Packing%20Standards.png" alt="Market-Specific Packing Standards" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Market-Specific%20Packing%20Standards.png" alt="Market-Specific Packing Standards" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Market-Specific Packing Standards</h3>
@@ -913,7 +574,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Seasonal%20Availability%20Planning.png" alt="Seasonal Availability Planning" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Seasonal%20Availability%20Planning.png" alt="Seasonal Availability Planning" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Seasonal Availability Planning</h3>
@@ -922,7 +583,7 @@
                 </div>
                 <div class="storytelling__card">
                   <div class="storytelling__image-wrap">
-                    <img src="assets/images/Home%20Page%20Images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Understanding%20Shelf%20Life%20&%20Sensitivity.png" alt="Understanding Shelf Life & Sensitivity" loading="lazy">
+                    <img src="assets/images/Farm-Level%20Storytelling/Our%20Produce%20Expertise/Understanding%20Shelf%20Life%20&%20Sensitivity.png" alt="Understanding Shelf Life & Sensitivity" loading="lazy">
                   </div>
                   <div class="storytelling__content">
                     <h3 class="storytelling__card-title">Understanding Shelf Life & Sensitivity</h3>
@@ -974,6 +635,7 @@
           <img src="assets/images/Certification%20and%20License%20Logos/APEDA%20Logo%20_%20Cleaned.png" alt="APEDA Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/MSME%20Logo%20_%20Cleaned.png" alt="MSME Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/Spices%20Board%20India.png" alt="Spices Board India Logo" class="logo-marquee__logo" loading="lazy">
+          <img src="assets/images/Certification%20and%20License%20Logos/Enhanced%20NABL%20Logo.png" alt="Enhanced NABL Logo" class="logo-marquee__logo" loading="lazy">
         </div>
         
         <!-- Block 2 -->
@@ -982,6 +644,7 @@
           <img src="assets/images/Certification%20and%20License%20Logos/APEDA%20Logo%20_%20Cleaned.png" alt="APEDA Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/MSME%20Logo%20_%20Cleaned.png" alt="MSME Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/Spices%20Board%20India.png" alt="Spices Board India Logo" class="logo-marquee__logo" loading="lazy">
+          <img src="assets/images/Certification%20and%20License%20Logos/Enhanced%20NABL%20Logo.png" alt="Enhanced NABL Logo" class="logo-marquee__logo" loading="lazy">
         </div>
 
         <!-- Block 3 -->
@@ -990,6 +653,7 @@
           <img src="assets/images/Certification%20and%20License%20Logos/APEDA%20Logo%20_%20Cleaned.png" alt="APEDA Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/MSME%20Logo%20_%20Cleaned.png" alt="MSME Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/Spices%20Board%20India.png" alt="Spices Board India Logo" class="logo-marquee__logo" loading="lazy">
+          <img src="assets/images/Certification%20and%20License%20Logos/Enhanced%20NABL%20Logo.png" alt="Enhanced NABL Logo" class="logo-marquee__logo" loading="lazy">
         </div>
 
         <!-- Block 4 -->
@@ -998,6 +662,7 @@
           <img src="assets/images/Certification%20and%20License%20Logos/APEDA%20Logo%20_%20Cleaned.png" alt="APEDA Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/MSME%20Logo%20_%20Cleaned.png" alt="MSME Logo" class="logo-marquee__logo" loading="lazy">
           <img src="assets/images/Certification%20and%20License%20Logos/Spices%20Board%20India.png" alt="Spices Board India Logo" class="logo-marquee__logo" loading="lazy">
+          <img src="assets/images/Certification%20and%20License%20Logos/Enhanced%20NABL%20Logo.png" alt="Enhanced NABL Logo" class="logo-marquee__logo" loading="lazy">
         </div>
       </div>
     </div>
@@ -1110,7 +775,7 @@
           </div>
           <h3 class="testimonials__name" style="font-size: var(--fs-lg); font-weight: var(--fw-bold); margin-bottom: var(--space-xs); font-style: normal; color: var(--color-charcoal);">Phytosanitary Standards</h3>
           <p class="testimonials__text" style="font-style: normal; margin-top: var(--space-xs); line-height: 1.6; font-size: 0.95rem;">
-            Rigorous laboratory testing for pesticide residues and microbial safety, certified compliant with FSSAI, APEDA, and importing regulations.
+            Rigorous laboratory testing for pesticide residues and microbial safety, certified compliant with FSSAI, APEDA, NABL, and importing regulations.
           </p>
         </div>
 
@@ -1374,6 +1039,7 @@
             <img src="assets/images/Certification%20and%20License%20Logos/APEDA%20Logo%20_%20Cleaned.png" alt="APEDA" class="footer__certs-row-img" loading="lazy">
             <img src="assets/images/Certification%20and%20License%20Logos/MSME%20Logo%20_%20Cleaned.png" alt="MSME" class="footer__certs-row-img" loading="lazy">
             <img src="assets/images/Certification%20and%20License%20Logos/Spices%20Board%20India.png" alt="Spices Board India" class="footer__certs-row-img" loading="lazy">
+            <img src="assets/images/Certification%20and%20License%20Logos/Enhanced%20NABL%20Logo.png" alt="Enhanced NABL Logo" class="footer__certs-row-img" loading="lazy">
           </div>
         </div>
       </div>

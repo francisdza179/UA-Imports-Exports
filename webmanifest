@@ -1,0 +1,16 @@
+{
+  "name": "UA Imports & Exports",
+  "short_name": "UA Imports",
+  "description": "Delivering South India's finest agro produce to the world. Premium Tender Coconuts, Cassava, Alphonso Mangoes, Drumsticks, and Shallots — FSSAI & APEDA compliant, export-ready.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b6b3a",
+  "icons": [
+    {
+      "src": "assets/images/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

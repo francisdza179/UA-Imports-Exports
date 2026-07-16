@@ -32,6 +32,11 @@ function initRevealAnimations() {
   revealElements.forEach((el) => {
     revealObserver.observe(el);
   });
+
+  // Signal that the reveal system initialised successfully. The inline head
+  // script uses this flag as a failsafe: if it is never set (module failed
+  // to load/run), it force-reveals all [data-reveal] elements after load.
+  document.documentElement.classList.add('reveal-ready');
 }
 
 /* ── Parallax ────────────────────────────────────── */

@@ -8,6 +8,7 @@ import { initCounterAnimation } from './counter-animation.js';
 import { initNavbar } from './navbar.js';
 import { initStorytellingCarousel } from './storytelling-carousel.js';
 import { initProductFilter } from './product-filter.js';
+import { initProductsRender } from './products-render.js';
 import { initTestimonialsCarousel } from './testimonials-carousel.js';
 import { initFaqAccordion } from './faq-accordion.js';
 import { initForms } from './forms.js';
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   safeInit('counterAnimation', initCounterAnimation);
   safeInit('storytellingCarousel', initStorytellingCarousel);
   safeInit('productFilter', initProductFilter);
+  safeInit('productsRender', initProductsRender);
   safeInit('testimonialsCarousel', initTestimonialsCarousel);
   safeInit('faqAccordion', initFaqAccordion);
   safeInit('forms', initForms);

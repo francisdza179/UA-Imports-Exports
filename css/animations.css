@@ -123,7 +123,11 @@
 /* Elements with [data-reveal] start hidden and animate in when
    the IntersectionObserver adds .is-revealed */
 
-[data-reveal] {
+/* Hidden state is gated behind `.js` (set by an inline head script) so that
+   if JavaScript ever fails to load/run, content stays visible instead of
+   being stuck at opacity:0. A load-time failsafe in the page head force-
+   reveals everything if the reveal system does not initialise. */
+.js [data-reveal] {
   opacity: 0;
   will-change: transform, opacity;
   transition-property: transform, opacity;
@@ -131,37 +135,37 @@
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* Custom high-end ease-out-expo curve */
 }
 
-[data-reveal="fade-up"] {
+.js [data-reveal="fade-up"] {
   transform: translateY(30px); /* Slightly tighter displacement for elegant movement */
 }
 
-[data-reveal="fade-down"] {
+.js [data-reveal="fade-down"] {
   transform: translateY(-30px);
 }
 
-[data-reveal="fade-left"] {
+.js [data-reveal="fade-left"] {
   transform: translateX(-40px);
 }
 
-[data-reveal="fade-right"] {
+.js [data-reveal="fade-right"] {
   transform: translateX(40px);
 }
 
-[data-reveal="carousel-right"] {
+.js [data-reveal="carousel-right"] {
   transform: translateX(250px);
 }
 
-[data-reveal="scale-in"] {
+.js [data-reveal="scale-in"] {
   transform: scale(0.88);
 }
 
-[data-reveal="flip-in"] {
+.js [data-reveal="flip-in"] {
   transform: perspective(1000px) rotateX(-80deg) translateY(30px);
   transform-origin: top center;
   opacity: 0;
 }
 
-[data-reveal="fade"] {
+.js [data-reveal="fade"] {
   transform: none;
 }
 
@@ -223,7 +227,7 @@
     transition-duration: 0.01ms !important;
   }
 
-  [data-reveal] {
+  .js [data-reveal] {
     opacity: 1;
     transform: none;
   }
