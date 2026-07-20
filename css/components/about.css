@@ -11,14 +11,14 @@
   display: grid;
   grid-template-columns: 55fr 45fr;
   grid-template-rows: auto auto;
-  gap: var(--space-3xl);
+  row-gap: var(--space-sm);
+  column-gap: var(--space-md);
   align-items: start;
 }
 
 .about__header {
   grid-column: 1;
   grid-row: 1;
-  margin-bottom: var(--space-xl);
 }
 
 .about__image-block {
@@ -37,7 +37,6 @@
   font-weight: var(--fw-extrabold);
   line-height: var(--lh-snug);
   color: var(--color-charcoal);
-  margin-bottom: var(--space-xl);
 }
 
 .about__heading .highlight {
