@@ -415,6 +415,9 @@ a:hover {
 .text-mint   { color: var(--color-mint); }
 .text-slate  { color: var(--color-slate); }
 
+.bg-white { background-color: var(--color-white); }
+.bg-cloud { background-color: var(--color-cloud); }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1475,6 +1478,11 @@ a:hover {
 .stats-bar__number .stats-suffix {
   font-size: 0.6em;
   color: var(--color-gold);
+}
+
+.stats-bar__number .stats-k {
+  font-size: 0.7em;
+  color: var(--color-forest);
 }
 
 .stats-bar__label {
@@ -6161,6 +6169,12 @@ a:hover {
   align-items: center;
 }
 
+.quick-inquiry__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
 .quick-inquiry__heading {
   font-family: var(--font-heading);
   font-size: var(--fs-3xl);
@@ -7871,6 +7885,11 @@ a:hover {
   color: var(--color-forest);
 }
 
+.contact-info-card__content {
+  flex: 1;
+  min-width: 0;
+}
+
 .contact-info-card__icon svg {
   width: 22px;
   height: 22px;
@@ -8320,6 +8339,17 @@ a:hover {
   letter-spacing: var(--ls-wide);
   color: var(--color-slate);
   font-weight: var(--fw-semibold);
+}
+.coa__section-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-charcoal);
+  padding: var(--space-lg) 0 var(--space-sm);
+  margin-top: var(--space-md);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .coa__test {
   font-weight: var(--fw-semibold);
